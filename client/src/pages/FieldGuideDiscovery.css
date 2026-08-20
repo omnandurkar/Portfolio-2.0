@@ -1,0 +1,4 @@
+/* Split-Screen Studio: the expanded Field Guide is an explicit atlas—each discovery names both its trigger and its physical location, with Studio reading as a ledger and Maker as pinned labels. */
+.guide-discovery-location { display:flex; align-items:center; gap:5px; margin:1px 0 9px !important; color:rgba(193,211,255,.64) !important; font:600 8px/1 "Space Grotesk" !important; letter-spacing:.08em; text-transform:uppercase; }.guide-discovery-location svg { color:#3972ff; flex:0 0 auto; }
+.mode-scrapbook .guide-discovery-location { color:rgba(32,36,45,.55) !important; font:600 11px/1 "Caveat" !important; letter-spacing:.01em; text-transform:none; }.mode-scrapbook .guide-discovery-location svg { color:#e6584a; }
+@media (max-width:700px) { .guide-discovery-location { font-size:7px !important; } }

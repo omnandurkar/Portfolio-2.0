@@ -1,0 +1,24 @@
+/* Story repair: preserve the retro console language while making Maker visibly tactile, the traveller compact, and the exit intentionally directional. */
+.quest-console-actions .quest-mode-switch { color:var(--quest-accent); border:1px solid color-mix(in srgb, var(--quest-accent) 52%, transparent); padding:6px 8px; background:color-mix(in srgb, var(--quest-accent) 10%, transparent); }
+.quest-maker .quest-console-actions .quest-mode-switch { color:#2f57b5; background:rgba(57,114,255,.1); }
+.quest-cartridge-cover img { width:49%; max-height:83%; bottom:0; filter:drop-shadow(7px 10px 9px rgba(0,0,0,.32)); }
+.quest-walker { width:clamp(70px,8vw,116px); bottom:14%; }
+
+.quest-final-pull { position:relative; display:grid; grid-template-columns:35px auto 20px; align-items:center; gap:11px; min-width:252px; padding:18px 18px 18px 12px; color:var(--quest-ink); border:1px solid var(--quest-accent); background:rgba(57,114,255,.08); box-shadow:6px 7px 0 rgba(57,114,255,.13); text-align:left; cursor:grab; transition:transform .2s var(--ease-out),background .2s var(--ease-out),box-shadow .2s var(--ease-out); touch-action:none; }
+.quest-final-pull:hover { background:rgba(57,114,255,.17); box-shadow:9px 11px 0 rgba(57,114,255,.1); transform:translateY(-4px); }
+.quest-final-pull:active { cursor:grabbing; transform:translateY(8px); }
+.quest-final-pull-rope { position:relative; display:block; width:24px; height:42px; border-left:1px solid var(--quest-accent); }
+.quest-final-pull-rope:before { content:""; position:absolute; top:0; left:-4px; width:7px; height:7px; border:1px solid var(--quest-accent); border-radius:50%; }
+.quest-final-pull-rope i { position:absolute; bottom:-1px; left:-7px; width:13px; height:13px; border-radius:50%; background:var(--quest-hot); box-shadow:0 0 0 4px rgba(255,118,79,.12); }
+.quest-final-pull b { font:600 18px/.94 "Space Grotesk"; letter-spacing:-.05em; }
+.quest-final-pull em { grid-column:2; color:var(--quest-muted); font:600 7px "Space Grotesk"; font-style:normal; letter-spacing:.11em; text-transform:uppercase; }
+.quest-final-pull svg { grid-column:3; grid-row:1 / span 2; color:var(--quest-accent); }
+
+.quest-pull-through { position:fixed; z-index:450; inset:0; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,#3972ff,#0a1328 64%); }
+.quest-pull-through:before { content:""; position:absolute; inset:0; opacity:.42; background:repeating-linear-gradient(90deg,rgba(255,255,255,.2) 0 1px,transparent 1px 14px); transform:skewX(-20deg); }
+.quest-pull-through span,.quest-pull-through b { position:relative; z-index:1; }
+.quest-pull-through span { font:600 10px "Space Grotesk"; letter-spacing:.16em; }
+.quest-pull-through b { margin-top:-30px; font-size:46px; }
+
+@media (max-width:760px) { .quest-console-actions .quest-mode-switch { padding:5px; }.quest-final-pull { width:100%; min-width:0; }.quest-walker { width:84px; bottom:17%; }.quest-cartridge-cover img { width:45%; max-height:75%; } }
+@media (prefers-reduced-motion: reduce) { .quest-final-pull { transition:none; }.quest-final-pull:hover,.quest-final-pull:active { transform:none; } }

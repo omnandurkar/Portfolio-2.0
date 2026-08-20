@@ -1,0 +1,32 @@
+/* Split-Screen Studio — reversible portrait experiment: supplied secondary photographs act as quiet field notes around, never instead of, the primary red editorial portrait. */
+.hero-secondary-portrait { position:absolute; z-index:1; display:block; margin:0; overflow:hidden; pointer-events:none; }
+.hero-secondary-portrait img { display:block; width:100%; height:100%; object-fit:cover; }
+.hero-secondary-portrait figcaption { position:absolute; right:0; bottom:0; left:0; padding:8px 9px; font:600 6px/1 "Space Grotesk"; letter-spacing:.13em; text-transform:uppercase; }
+
+/* Studio: ghosted evidence frames—present in the composition but never stronger than the hero signal. */
+.hero-secondary-window { right:clamp(330px,29vw,460px); bottom:clamp(390px,45vh,470px); width:clamp(142px,15vw,208px); height:clamp(190px,25vh,288px); border:1px solid rgba(154,182,255,.28); background:#10131a; box-shadow:0 22px 46px rgba(0,0,0,.34); opacity:.72; transform:rotate(-8deg); }
+.hero-secondary-window:after,.hero-secondary-outlook:after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(11,14,22,.04),rgba(7,9,14,.64)); }
+.hero-secondary-window img { object-position:52% 44%; filter:saturate(.72) contrast(1.08); }.hero-secondary-window figcaption { z-index:1; color:rgba(220,230,255,.78); }
+.hero-secondary-outlook { right:clamp(340px,31vw,500px); bottom:clamp(48px,7vh,82px); width:clamp(126px,14vw,198px); height:clamp(165px,22vh,242px); border:1px solid rgba(154,182,255,.24); background:#11141b; box-shadow:0 18px 38px rgba(0,0,0,.32); opacity:.66; transform:rotate(-8deg); }
+.hero-secondary-outlook img { object-position:70% 43%; filter:saturate(.62) contrast(1.11); }.hero-secondary-outlook figcaption { z-index:1; color:rgba(220,230,255,.7); }
+.hero-secondary-closeup { right:clamp(180px,15vw,245px); bottom:clamp(505px,57vh,590px); width:clamp(140px,14vw,198px); height:clamp(100px,12vh,142px); border:1px solid rgba(154,182,255,.22); background:#11141b; box-shadow:0 15px 32px rgba(0,0,0,.28); opacity:.54; transform:rotate(-11deg); }.hero-secondary-closeup img { object-position:50% 35%; filter:saturate(.56) contrast(1.12); }.hero-secondary-closeup figcaption { z-index:1; color:rgba(220,230,255,.66); }
+
+/* Maker: the same shots become filled contact cards in the two pre-existing black photo spaces of the desk collage. */
+.mode-scrapbook .hero-secondary-portrait { z-index:1; padding:5px 5px 18px; border:1px solid rgba(32,36,45,.2); background:#fffdf5; box-shadow:3px 5px 0 rgba(32,36,45,.09); opacity:1; }
+.mode-scrapbook .hero-secondary-portrait:before { display:none; }.mode-scrapbook .hero-secondary-portrait:after { display:none; }
+.mode-scrapbook .hero-secondary-window { right:clamp(342px,29vw,454px); bottom:clamp(397px,45vh,468px); width:clamp(154px,15.2vw,220px); height:clamp(207px,26.5vh,295px); transform:rotate(-11deg); }.mode-scrapbook .hero-secondary-window img { filter:saturate(.94) contrast(1.02); }
+.mode-scrapbook .hero-secondary-outlook { right:clamp(355px,31vw,490px); bottom:clamp(45px,6vh,75px); width:clamp(152px,16vw,230px); height:clamp(205px,28vh,310px); transform:rotate(-10deg); }.mode-scrapbook .hero-secondary-outlook img { object-position:69% 44%; filter:saturate(.92) contrast(1.02); }
+.mode-scrapbook .hero-secondary-closeup { right:clamp(190px,16vw,258px); bottom:clamp(510px,57vh,590px); width:clamp(152px,14vw,202px); height:clamp(108px,12vh,142px); transform:rotate(-11deg); }.mode-scrapbook .hero-secondary-closeup img { object-position:50% 34%; filter:saturate(.88) contrast(1.03); }
+.mode-scrapbook .hero-secondary-portrait figcaption { z-index:3; color:#2f457b; padding:0 6px 6px; font:600 9px/1 "Caveat"; letter-spacing:.02em; text-transform:none; transform:rotate(-1deg); }
+
+@media (max-width:900px) { .hero-secondary-window { right:clamp(244px,29vw,315px); bottom:380px; }.hero-secondary-outlook { right:clamp(254px,31vw,330px); bottom:64px; }.hero-secondary-closeup { right:145px; bottom:490px; } .mode-scrapbook .hero-secondary-window { right:clamp(238px,29vw,310px); bottom:382px; }.mode-scrapbook .hero-secondary-outlook { right:clamp(246px,31vw,325px); bottom:60px; }.mode-scrapbook .hero-secondary-closeup { right:150px; bottom:490px; } }
+@media (max-width:640px) { .hero-secondary-portrait { display:none; } }
+@media (prefers-reduced-motion: reduce) { .hero-secondary-portrait { transition:none; } }
+
+/* Maker hero repair — portrait caption receives its own clear footer; desk discoveries live below the collage, never across the handwritten line. */
+@media (min-width:761px) {
+  .mode-scrapbook .hero-portrait { bottom:126px; padding-bottom:52px; }
+  .mode-scrapbook .hero-portrait figcaption { display:block; right:14px; bottom:11px; left:14px; min-height:29px; padding:0; }
+  .mode-scrapbook .hero-portrait figcaption span { display:block; max-width:100%; overflow:hidden; color:#20242d; font-size:8px; letter-spacing:.1em; text-overflow:ellipsis; white-space:nowrap; }
+  .mode-scrapbook .hero-portrait figcaption i { display:block; max-width:100%; margin-top:4px; color:#2f457b; font-size:13px; line-height:1; text-align:left; white-space:nowrap; }
+}

@@ -1,0 +1,12 @@
+/* Split-Screen Studio: A fixed shell preserves the original pill-shaped Studio–Maker control and reserves header space without changing the control’s established visual language. */
+.tethered-mode-control { position:fixed; z-index:150; top:10px; right:18px; display:block; }
+.tethered-mode-control .mode-toggle { margin:0; }
+
+/* The original control lived in the header; these offsets prevent it covering contextual actions while retaining permanent availability. */
+.site-header .header-actions { margin-right:151px; }
+.quest-console-actions { margin-right:151px; }
+
+@media (max-width:760px) {
+  .site-header .header-actions,.quest-console-actions { margin-right:0; }
+  .tethered-mode-control { top:auto; right:14px; bottom:15px; }
+}

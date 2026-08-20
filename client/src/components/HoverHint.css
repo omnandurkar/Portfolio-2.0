@@ -1,0 +1,24 @@
+/* Split-Screen Studio: Hover Atlas is a calm technical readout in Studio and a taped paper annotation in Maker; labels explain only intentional controls after a deliberate pause. */
+.hover-atlas-trigger { display:inline-flex; max-width:100%; position:relative; }
+
+/* Studio: a blue instrument readout with an explicit control title. */
+.hover-atlas-content { z-index:300 !important; display:grid; gap:4px; max-width:252px; padding:11px 12px 10px !important; color:#f7f8ff !important; border:1px solid rgba(86,133,255,.72) !important; border-radius:2px !important; background:linear-gradient(145deg,rgba(18,25,42,.98),rgba(6,9,16,.98)) !important; box-shadow:0 15px 34px rgba(0,0,0,.44),inset 2px 0 0 #3972ff,0 0 0 4px rgba(57,114,255,.08) !important; backdrop-filter:blur(10px); }
+.hover-atlas-content > svg { fill:rgba(11,16,27,.98) !important; stroke:rgba(86,133,255,.72) !important; }.hover-atlas-content > svg path { fill:rgba(11,16,27,.98) !important; }
+.hover-atlas-kicker { display:flex; align-items:center; gap:6px; color:#8cafff; font:600 7px "Space Grotesk"; letter-spacing:.16em; text-transform:uppercase; }.hover-atlas-kicker i { width:5px; height:5px; border-radius:50%; background:#3972ff; box-shadow:0 0 10px rgba(75,128,255,.95); }
+.hover-atlas-title { color:#fff; font:600 12px/1.05 "Space Grotesk"; letter-spacing:-.025em; }.hover-atlas-content p { margin:1px 0 0; color:rgba(238,243,255,.72); font:500 11px/1.38 "DM Sans"; }
+
+/* Maker: a slightly imperfect paper note with an ink headline and a small piece of red tape. */
+.hover-atlas-scrapbook { gap:2px; color:#20242d !important; border:1px dashed rgba(32,36,45,.48) !important; background:#fffdf4 !important; box-shadow:5px 6px 0 rgba(32,36,45,.16),0 0 0 4px rgba(246,203,65,.13) !important; transform:rotate(-1.15deg); }
+.hover-atlas-scrapbook:before { content:""; position:absolute; top:-5px; right:16px; width:31px; height:9px; opacity:.85; background:rgba(246,203,65,.7); transform:rotate(3deg); }.hover-atlas-scrapbook > svg,.hover-atlas-scrapbook > svg path { fill:#fffdf4 !important; stroke:rgba(32,36,45,.48) !important; }
+.hover-atlas-scrapbook .hover-atlas-kicker { color:#2f57b5; font:600 11px/1 "Caveat"; letter-spacing:.03em; text-transform:none; }.hover-atlas-scrapbook .hover-atlas-kicker i { width:6px; height:6px; border-radius:1px; background:#e6584a; box-shadow:none; transform:rotate(18deg); }.hover-atlas-scrapbook .hover-atlas-title { color:#20242d; font:600 17px/.92 "Caveat"; letter-spacing:.01em; }.hover-atlas-scrapbook p { color:rgba(32,36,45,.78); font:500 10.5px/1.36 "DM Sans"; }
+
+/* Atlas-wrapped controls receive a tactile acknowledgement before the delayed explanation appears. */
+@media (hover:hover) {
+  .hover-atlas-trigger:has(> :is(a,button)) { transition:transform .18s var(--ease-out, cubic-bezier(.23,1,.32,1)); }
+  .hover-atlas-trigger:has(> :is(a,button):hover) { transform:translateY(-2px); }
+  .mode-scrapbook .hover-atlas-trigger:has(> :is(a,button):hover) { transform:translateY(-2px) rotate(-.45deg); }
+  .mode-studio .hover-atlas-trigger:has(> :is(a,button):hover):before { content:""; position:absolute; z-index:-1; right:-4px; bottom:-4px; left:5px; height:1px; opacity:.82; background:#3972ff; transform:scaleX(1); transform-origin:left; }
+  .mode-scrapbook .hover-atlas-trigger:has(> :is(a,button):hover):before { content:""; position:absolute; z-index:-1; right:-3px; bottom:-3px; left:3px; height:2px; opacity:.84; background:#e6584a; transform:rotate(-1.6deg); }
+}
+@media (max-width:760px),(hover:none) { .hover-atlas-content { display:none !important; } }
+@media (prefers-reduced-motion: reduce) { .hover-atlas-content,.hover-atlas-trigger { transition:none !important; animation:none !important; }.hover-atlas-trigger:has(> :is(a,button):hover),.mode-scrapbook .hover-atlas-trigger:has(> :is(a,button):hover) { transform:none; } }
