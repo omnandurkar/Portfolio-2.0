@@ -1,10 +1,12 @@
 // Split-Screen Studio: The homepage tells one curated career story in two deliberately contrasting visual systems; the 10-second brief becomes a focused recruiter dossier.
-/** Design reminder — The homepage is an editorial Studio/Maker hero; Storyboard Break and First Draft are optional, portrait-led layers that never compromise the normal work, story, or recruiter paths. */
+/** Design reminder — The homepage is an editorial Studio/Maker hero; its one-time opening handoff, Storyboard Break, and First Draft are optional layers that never compromise normal work, story, recruiter, or navigation paths. */
 import { motion } from "framer-motion";
 import { type KeyboardEvent, type PointerEvent, useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUpRight, BriefcaseBusiness, Check, Code2, Coffee, Copy, Database, FileText, Gamepad2, Github, Linkedin, Mail, MapPin, Palette, Plus, Send, Sparkles, X } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import ProjectVisual from "@/components/ProjectVisual";
+import ScrollContinuationCue from "@/components/ScrollContinuationCue";
+import HomeLoadHandoff from "@/components/HomeLoadHandoff";
 import { experiences, featuredProjects, profile } from "@/data/portfolio";
 import { usePortfolioMode } from "@/contexts/ModeContext";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
@@ -153,6 +155,7 @@ export default function Home() {
 
   return (
     <div className={`site-shell ${monsoon ? "is-monsoon" : ""} ${chaiOpen ? "is-chai" : ""}`}>
+      <HomeLoadHandoff />
       <SiteHeader />
       <main>
         <section className={`hero ${storyboardActive ? "is-storyboard-active" : ""} ${firstDraftOpen ? "is-first-draft-open" : ""} ${gravityActive ? "is-gravity-active" : ""}`} id="top">
@@ -303,6 +306,7 @@ export default function Home() {
           <div className="section-shell work-heading">
             <div className="section-kicker"><span>03</span><i /> Selected work</div>
             <div className="work-title-row"><h2>Projects with<br /><em>purpose.</em></h2><p>Six working proofs of how I think: useful flows first, visual character second, dependable systems underneath.</p></div>
+            <div className="work-mode-pair" aria-label="One project record in two creative languages"><span><i aria-hidden="true" /> Studio / signal grid</span><b aria-hidden="true">↔</b><span><i aria-hidden="true" /> Maker / ink note</span><em>one project record, two material voices</em></div>
             <div className="work-navigator">
               <div className="navigator-intro"><span className="signal-dot" /><p>{isStudio ? "Build index / choose a system to inspect" : "pick a card from the work pile"}</p></div>
               <div className="project-tabs" role="tablist" aria-label="Selected projects">
@@ -364,6 +368,7 @@ export default function Home() {
           <div className="contact-bottom"><p>Bring the complicated brief. I’ll help make the product path obvious, useful, and worth using.</p><div className="social-links"><a href="https://github.com/" target="_blank" rel="noreferrer"><Github size={16} /> GitHub</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn</a><a href={`mailto:${profile.email}`}><Mail size={16} /> Email</a></div></div>
         </section>
       </main>
+      <ScrollContinuationCue />
       <footer className="site-footer"><span className="footer-mark"><b>OM</b><i>signal / 2026</i></span><span>Built with React · Tailwind · GSAP</span><div className="footer-discovery"><button type="button" className={signalFound ? "footer-signal is-found" : "footer-signal"} aria-expanded={signalFound} onClick={() => setSignalFound((found) => !found)}><Sparkles size={12} /><span>{isStudio ? "Found a signal?" : "a little secret?"}</span></button>{signalFound && <motion.div className="footer-signal-note" initial={{ opacity: 0, y: 7, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.2 }} role="status"><p>{isStudio ? "The work stays obvious. The hidden layer is optional." : "There’s a whole little map behind the main path."}</p><a href="/field-guide">Open the Field Guide <ArrowUpRight size={12} /></a></motion.div>}</div><a href="#top">Back to top ↑</a>{workspaceNudge && <motion.div className="workspace-nudge" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}><span>Still here? There’s a little map behind the pixels.</span><a href="/field-guide">Open it <ArrowUpRight size={12} /></a><button type="button" aria-label="Dismiss workspace note" onClick={() => setWorkspaceNudge(false)}>×</button></motion.div>}</footer>
     </div>
   );

@@ -1,0 +1,47 @@
+/* Design reminder — Studio uses an instrument-panel archive notice; Maker turns the same message into a preserved paper field note. The portal-safe mode class controls the material. */
+body:has(.legacy-project-dialog) [data-slot="dialog-overlay"] { z-index:90 !important; background:rgba(3,6,12,.74) !important; backdrop-filter:blur(14px) saturate(.62); -webkit-backdrop-filter:blur(14px) saturate(.62); }
+.legacy-project-dialog { z-index:91 !important; width:min(610px,calc(100vw - 32px)) !important; max-width:610px !important; padding:0 !important; overflow:hidden; border:1px solid rgba(92,135,255,.52) !important; border-radius:4px !important; background:#090d15 !important; color:#f4f7ff !important; box-shadow:0 0 0 1px rgba(92,135,255,.1),0 30px 110px rgba(0,0,0,.76) !important; }
+.legacy-project-dialog-card { position:relative; display:grid; gap:18px; padding:28px 34px 22px 51px; overflow:hidden; background:linear-gradient(135deg,#151c2d 0%,#090d15 70%); }
+.legacy-project-dialog-card:before { content:""; position:absolute; top:0; bottom:0; left:28px; width:1px; background:linear-gradient(180deg,transparent,rgba(99,147,255,.95) 13%,rgba(99,147,255,.12) 87%,transparent); }
+.legacy-project-dialog-glow { position:absolute; top:-112px; right:-82px; width:270px; height:270px; border:1px solid rgba(99,147,255,.2); border-radius:50%; box-shadow:0 0 0 27px rgba(99,147,255,.035),0 0 0 54px rgba(99,147,255,.02); pointer-events:none; }
+.legacy-project-dialog-rail { position:absolute; z-index:1; top:19px; bottom:19px; left:7px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; color:rgba(224,233,255,.36); font:600 7px "Space Grotesk"; letter-spacing:.16em; writing-mode:vertical-rl; text-transform:uppercase; }
+.legacy-project-dialog-rail i { width:1px; height:64px; background:#6b95ff; box-shadow:0 0 12px rgba(99,147,255,.72); }
+.legacy-project-dialog-head,.legacy-project-dialog-context,.legacy-project-dialog-project-note,.legacy-project-dialog-actions,.legacy-project-dialog-footnote { position:relative; z-index:2; }
+.legacy-project-dialog-head { gap:9px !important; padding-right:24px; }
+.legacy-project-dialog-label { display:flex; align-items:center; gap:7px; margin:0; color:#8eafff; font:600 8px "Space Grotesk"; letter-spacing:.14em; text-transform:uppercase; }
+.legacy-project-dialog-label svg { flex:0 0 auto; }
+.legacy-project-dialog [data-slot="dialog-title"] { margin:0; color:#fff; font:600 clamp(30px,5vw,44px)/.94 "Space Grotesk"; letter-spacing:-.065em; }
+.legacy-project-dialog [data-slot="dialog-title"] em { color:#80a6ff; font-style:normal; }
+.legacy-project-dialog [data-slot="dialog-description"] { max-width:460px; color:rgba(235,241,255,.7); font:500 13px/1.5 "DM Sans"; }
+.legacy-project-dialog-context { padding:15px 17px; border-left:2px solid #6b95ff; background:rgba(94,135,255,.085); }
+.legacy-project-dialog-context span { display:block; margin-bottom:7px; color:#9cb9ff; font:600 8px "Space Grotesk"; letter-spacing:.13em; text-transform:uppercase; }
+.legacy-project-dialog-context p,.legacy-project-dialog-project-note p { margin:0; color:rgba(242,246,255,.86); font:500 13px/1.48 "DM Sans"; }
+.legacy-project-dialog-project-note { display:flex; gap:11px; align-items:flex-start; padding:0 2px; color:#8eafff; }
+.legacy-project-dialog-project-note svg { flex:0 0 auto; margin-top:2px; }
+.legacy-project-dialog-project-note b { color:#fff; font-weight:600; }
+.legacy-project-dialog-actions { display:flex !important; flex-direction:row !important; flex-wrap:wrap; justify-content:flex-start !important; gap:8px !important; padding-top:16px; border-top:1px solid rgba(255,255,255,.12); }
+.legacy-project-dialog-actions a { display:inline-flex; align-items:center; justify-content:center; gap:7px; min-height:38px; padding:0 13px; color:#fff; border:1px solid rgba(107,149,255,.78); background:rgba(107,149,255,.16); font:600 9px "Space Grotesk"; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; transition:transform .16s var(--ease-out),background .16s var(--ease-out); }
+.legacy-project-dialog-actions a:hover { background:rgba(107,149,255,.34); transform:translateY(-2px); }
+.legacy-project-dialog-actions a:nth-child(2) { border-color:rgba(255,255,255,.22); background:transparent; }
+.legacy-project-dialog-actions a:focus-visible { outline:2px solid #9ab8ff; outline-offset:3px; }
+.legacy-project-dialog-footnote { margin:0; color:rgba(224,233,255,.42); font:500 10px/1.45 "DM Sans"; }
+html[data-portfolio-mode="scrapbook"] body:has(.legacy-project-dialog) [data-slot="dialog-overlay"] { background:rgba(37,43,52,.54) !important; backdrop-filter:blur(12px) saturate(.72); -webkit-backdrop-filter:blur(12px) saturate(.72); }
+.legacy-project-dialog-scrapbook { border-color:rgba(39,45,55,.23) !important; background:#fffdf6 !important; color:#20242d !important; box-shadow:9px 11px 0 rgba(35,41,50,.14),0 30px 100px rgba(35,41,50,.33) !important; }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-card { background:#fffdf6; }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-card:before { left:28px; width:2px; background:repeating-linear-gradient(180deg,transparent 0 5px,#3972ff 5px 9px); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-glow { border-color:rgba(246,203,65,.36); box-shadow:0 0 0 27px rgba(246,203,65,.1),0 0 0 54px rgba(57,114,255,.035); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-rail { color:rgba(32,36,45,.47); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-rail i { background:#e6584a; box-shadow:0 0 10px rgba(234,88,74,.33); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-label,.legacy-project-dialog-scrapbook .legacy-project-dialog-context span,.legacy-project-dialog-scrapbook .legacy-project-dialog-project-note { color:#2f57b5; }
+.legacy-project-dialog-scrapbook [data-slot="dialog-title"],.legacy-project-dialog-scrapbook .legacy-project-dialog-project-note b { color:#20242d; }
+.legacy-project-dialog-scrapbook [data-slot="dialog-title"] em { color:#e6584a; }
+.legacy-project-dialog-scrapbook [data-slot="dialog-description"] { color:rgba(32,36,45,.68); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-context { border-left-color:#e6584a; background:rgba(246,203,65,.18); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-context p,.legacy-project-dialog-scrapbook .legacy-project-dialog-project-note p { color:#313846; }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-actions { border-color:rgba(32,36,45,.16); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-actions a { color:#1f315b; border-color:#3972ff; background:rgba(57,114,255,.1); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-actions a:hover { background:rgba(57,114,255,.2); }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-actions a:nth-child(2) { border-color:rgba(32,36,45,.24); background:transparent; }
+.legacy-project-dialog-scrapbook .legacy-project-dialog-footnote { color:rgba(32,36,45,.55); font:600 14px/1.25 "Caveat"; }
+@media (max-width:640px) { .legacy-project-dialog { width:calc(100vw - 24px) !important; }.legacy-project-dialog-card { gap:15px; padding:22px 18px 18px 39px; }.legacy-project-dialog-card:before,.legacy-project-dialog-scrapbook .legacy-project-dialog-card:before { left:20px; }.legacy-project-dialog-rail { top:16px; bottom:16px; left:5px; }.legacy-project-dialog-head { padding-right:26px; }.legacy-project-dialog [data-slot="dialog-title"] { font-size:31px; }.legacy-project-dialog [data-slot="dialog-description"],.legacy-project-dialog-context p,.legacy-project-dialog-project-note p { font-size:12px; }.legacy-project-dialog-context { padding:12px 13px; }.legacy-project-dialog-actions { display:grid !important; grid-template-columns:1fr 1fr; }.legacy-project-dialog-actions a { min-height:39px; padding:0 8px; font-size:8px; }.legacy-project-dialog-footnote { font-size:9px; } }
+@media (prefers-reduced-motion: reduce) { body:has(.legacy-project-dialog) [data-slot="dialog-overlay"] { backdrop-filter:none; -webkit-backdrop-filter:none; }.legacy-project-dialog-actions a { transition:none; }.legacy-project-dialog-actions a:hover { transform:none; } }

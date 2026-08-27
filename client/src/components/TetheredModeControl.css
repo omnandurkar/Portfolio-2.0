@@ -1,6 +1,35 @@
 /* Split-Screen Studio: A fixed shell preserves the original pill-shaped Studio–Maker control and reserves header space without changing the control’s established visual language. */
+/* Split-Screen Studio: first-visit onboarding lets the full page recede so the real Studio/Maker material switch reads as the central brand handoff. */
 .tethered-mode-control { position:fixed; z-index:150; top:10px; right:18px; display:block; }
 .tethered-mode-control .mode-toggle { margin:0; }
+.mode-onboarding-scrim { position:fixed; z-index:-1; inset:0; width:100vw; height:100vh; pointer-events:auto; backdrop-filter:blur(7px) saturate(.72); -webkit-backdrop-filter:blur(7px) saturate(.72); }
+.mode-onboarding-scrim-studio { background:rgba(1,4,10,.7); }
+.mode-onboarding-scrim-scrapbook { background:rgba(36,39,48,.56); }
+.mode-onboarding-active .mode-toggle { position:relative; z-index:2; box-shadow:0 0 0 6px rgba(83,128,255,.18), 0 18px 42px rgba(0,0,0,.52); }
+.mode-onboarding-active .mode-intro-guide { z-index:2; }
+
+.mode-intro-guide { position:absolute; top:calc(100% + 15px); right:0; width:min(332px, calc(100vw - 36px)); padding:17px 18px 15px; text-align:left; isolation:isolate; box-sizing:border-box; }
+.mode-intro-guide::before { content:""; position:absolute; right:40px; top:-15px; width:1px; height:14px; background:currentColor; opacity:.42; }
+.mode-intro-guide::after { content:""; position:absolute; right:36px; top:-5px; width:8px; height:8px; border-top:1px solid currentColor; border-left:1px solid currentColor; transform:rotate(45deg); opacity:.66; }
+.mode-intro-guide-studio { color:#e9efff; background:linear-gradient(145deg, rgba(10,17,31,.98), rgba(19,30,54,.98)); border:1px solid rgba(115,151,255,.48); box-shadow:0 18px 45px rgba(0,4,14,.38), inset 0 1px 0 rgba(255,255,255,.08); }
+.mode-intro-guide-scrapbook { color:#202637; background:#fffdf2; border:2px solid #202637; box-shadow:5px 5px 0 #e9c9e2, 11px 11px 0 rgba(70,102,194,.22); transform:rotate(-1deg); }
+.mode-intro-guide-label { display:flex; align-items:center; gap:7px; margin:0 25px 10px 0; font-family:"Space Grotesk", sans-serif; font-size:9px; letter-spacing:.14em; font-weight:800; }
+.mode-intro-guide-label i { display:block; width:20px; height:1px; background:currentColor; opacity:.55; }
+.mode-intro-guide > strong { display:block; max-width:258px; font-family:"Space Grotesk", sans-serif; font-size:18px; line-height:1.02; letter-spacing:-.045em; }
+.mode-intro-guide-copy { margin:9px 0 12px; max-width:285px; font-size:12px; line-height:1.45; opacity:.82; }
+.mode-intro-guide-copy b { color:inherit; opacity:1; }
+.mode-intro-guide-shortcut { display:flex; align-items:center; gap:8px; margin:0; padding:9px 10px; font-size:11px; line-height:1.35; }
+.mode-intro-guide-studio .mode-intro-guide-shortcut { background:rgba(80,124,255,.14); border-left:2px solid #5f84ff; }
+.mode-intro-guide-scrapbook .mode-intro-guide-shortcut { background:#ffef80; border:1px dashed rgba(32,38,55,.55); }
+.mode-intro-guide-shortcut svg { flex:0 0 auto; color:#5f84ff; }
+.mode-intro-guide-shortcut kbd { display:inline-flex; align-items:center; justify-content:center; min-width:18px; height:18px; margin:0 2px; color:inherit; border:1px solid currentColor; border-radius:3px; font-family:"Space Grotesk", sans-serif; font-size:10px; font-weight:800; box-shadow:1px 1px 0 currentColor; vertical-align:middle; }
+.mode-intro-guide-touch { margin:8px 0 0; font-size:10px; line-height:1.35; opacity:.67; }
+.mode-intro-guide-dismiss { margin-top:12px; padding:0; color:inherit; background:transparent; border:0; border-bottom:1px solid currentColor; font-family:"Space Grotesk", sans-serif; font-size:10px; font-weight:800; letter-spacing:.06em; cursor:pointer; }
+.mode-intro-guide-dismiss span { display:inline-block; margin-left:3px; transition:transform .16s cubic-bezier(.23,1,.32,1); }
+.mode-intro-guide-dismiss:hover span,.mode-intro-guide-dismiss:focus-visible span { transform:translateX(3px); }
+.mode-intro-guide-close { position:absolute; z-index:2; top:10px; right:10px; display:grid; place-items:center; width:25px; height:25px; padding:0; color:inherit; background:transparent; border:1px solid currentColor; border-radius:50%; cursor:pointer; opacity:.72; }
+.mode-intro-guide-close:hover,.mode-intro-guide-close:focus-visible { opacity:1; transform:rotate(8deg); }
+.mode-intro-guide button:focus-visible { outline:2px solid #5f84ff; outline-offset:3px; }
 
 /* The original control lived in the header; these offsets prevent it covering contextual actions while retaining permanent availability. */
 .site-header .header-actions { margin-right:151px; }
@@ -9,4 +38,30 @@
 @media (max-width:760px) {
   .site-header .header-actions,.quest-console-actions { margin-right:0; }
   .tethered-mode-control { top:auto; right:14px; bottom:15px; }
+  .tethered-mode-control .mode-toggle { position:relative; min-width:132px; min-height:43px; padding:5px 8px 5px 6px; border:2px solid var(--blue); box-shadow:0 0 0 4px rgba(57,114,255,.14), 4px 4px 0 rgba(0,0,0,.18); }
+  .tethered-mode-control .mode-toggle::before { content:"SWITCH VIEW"; position:absolute; right:1px; bottom:calc(100% + 7px); padding:4px 6px; color:#ffffff; background:var(--blue); font-family:var(--font-mono,monospace); font-size:7px; font-weight:800; letter-spacing:.1em; line-height:1; white-space:nowrap; box-shadow:2px 2px 0 rgba(0,0,0,.3); }
+  .tethered-mode-control .mode-toggle::after { content:""; position:absolute; right:23px; bottom:calc(100% + 1px); width:1px; height:7px; background:var(--blue); }
+  .tethered-mode-control .mode-toggle .mode-toggle-copy { display:grid; }
+  .tethered-mode-control .mode-toggle .mode-toggle-track { display:block; }
+  .tethered-mode-control .mode-toggle .mode-toggle-copy b { font-size:10px; }
+  .tethered-mode-control .mode-toggle .mode-toggle-copy small { font-size:8px; }
+  .tethered-mode-control .mode-toggle .mode-toggle-icon { width:30px; height:30px; }
+  .mode-scrapbook .tethered-mode-control .mode-toggle { border-style:dashed; box-shadow:4px 4px 0 rgba(57,114,255,.28), 0 0 0 4px rgba(57,114,255,.1); }
+  .mode-scrapbook .tethered-mode-control .mode-toggle::before { color:#20242d; background:#ffeb75; }
+  .mode-onboarding-active .mode-toggle { box-shadow:0 0 0 6px rgba(83,128,255,.28), 0 18px 42px rgba(0,0,0,.5); }
+  .mode-intro-guide { top:auto; right:0; bottom:calc(100% + 14px); width:min(264px, calc(100vw - 28px)); padding:9px 11px 8px; }
+  .mode-intro-guide::before { top:auto; bottom:-14px; }
+  .mode-intro-guide::after { top:auto; bottom:-5px; transform:rotate(225deg); }
+  .mode-intro-guide-label { display:none; }
+  .mode-intro-guide > strong { max-width:210px; font-size:13px; }
+  .mode-intro-guide-copy { margin:4px 0 5px; font-size:9px; line-height:1.28; }
+  .mode-intro-guide-shortcut { display:none; }
+  .mode-intro-guide-touch { display:block; margin-top:0; font-size:8px; }
+  .mode-intro-guide-dismiss { margin-top:4px; font-size:8px; }
+  .mode-intro-guide-close { top:8px; right:8px; width:21px; height:21px; }
 }
+
+@media (min-width:761px) { .mode-intro-guide-touch { display:none; } }
+@media (prefers-reduced-motion: no-preference) { .mode-onboarding-active .mode-toggle { animation:mode-onboarding-breathe 1.65s cubic-bezier(.23,1,.32,1) infinite alternate; } }
+@keyframes mode-onboarding-breathe { from { transform:translateY(0); } to { transform:translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) { .mode-intro-guide-dismiss span,.mode-intro-guide-close { transition:none; } .mode-onboarding-scrim { backdrop-filter:none; -webkit-backdrop-filter:none; } }

@@ -1,0 +1,98 @@
+/* Split-Screen Studio: a three-second opening is a composed seam between a black signal lab and a sun-warmed paper desk, never a generic spinner. */
+.home-load-handoff {
+  --handoff-ink: #06080d;
+  --handoff-blue: #3972ff;
+  --handoff-paper: #e9dcc0;
+  --handoff-rust: #c85b3b;
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 54% 46%;
+  min-height: 100dvh;
+  background: var(--handoff-ink);
+  color: #f6f7fb;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+.home-load-handoff__studio-field,
+.home-load-handoff__maker-field { position: relative; overflow: hidden; }
+.home-load-handoff__studio-field { background: radial-gradient(circle at 27% 56%, rgba(57, 114, 255, .19), transparent 30%), #06080d; }
+.home-load-handoff__maker-field { background: var(--handoff-paper); color: #1b2730; }
+.home-load-handoff__grid { position: absolute; inset: -25%; background-image: linear-gradient(rgba(160, 180, 255, .13) 1px, transparent 1px), linear-gradient(90deg, rgba(160, 180, 255, .13) 1px, transparent 1px); background-size: 42px 42px; transform: rotate(-12deg); opacity: .48; }
+.home-load-handoff__orbit { position: absolute; left: 19%; top: 50%; border: 1px solid rgba(126, 161, 255, .75); border-radius: 50%; transform: translate(-50%, -50%); }
+.home-load-handoff__orbit--one { width: clamp(18rem, 33vw, 38rem); aspect-ratio: 1; }
+.home-load-handoff__orbit--two { width: clamp(10rem, 19vw, 23rem); aspect-ratio: 1; border-color: var(--handoff-blue); box-shadow: 0 0 4rem rgba(57, 114, 255, .24); }
+.home-load-handoff__signal { position: absolute; left: 8%; bottom: 9%; color: var(--handoff-blue); font: 700 clamp(2.5rem, 6vw, 7rem)/.8 "Space Grotesk", sans-serif; letter-spacing: -.11em; }
+
+.home-load-handoff__paper-line { position: absolute; height: 2px; background: rgba(46, 89, 103, .45); transform-origin: left; }
+.home-load-handoff__paper-line--one { width: 66%; top: 29%; left: 15%; transform: rotate(-7deg); }
+.home-load-handoff__paper-line--two { width: 78%; top: 69%; left: 22%; transform: rotate(12deg); background: rgba(200, 91, 59, .65); }
+.home-load-handoff__tape { position: absolute; top: 24%; right: 16%; width: 8.25rem; height: 2.75rem; border: 1px solid rgba(54, 109, 115, .35); background: rgba(255, 247, 218, .53); transform: rotate(8deg); }
+.home-load-handoff__pencil-mark { position: absolute; right: 10%; bottom: 11%; color: #9a3f28; font: 600 clamp(.66rem, 1vw, .9rem)/1.1 "Caveat", cursive; letter-spacing: .08em; transform: rotate(-7deg); }
+
+.home-load-handoff__seam { position: absolute; z-index: 1; top: 0; bottom: 0; left: 54%; width: 1px; overflow: hidden; background: rgba(255,255,255,.24); }
+.home-load-handoff__seam i { display: block; width: 100%; height: 24%; background: var(--handoff-blue); box-shadow: 0 0 1.1rem var(--handoff-blue); }
+.home-load-handoff__copy { position: absolute; z-index: 2; left: clamp(1.4rem, 7vw, 8.5rem); top: 50%; width: min(48rem, 72vw); transform: translateY(-50%); }
+.home-load-handoff__copy > p { display: flex; gap: .7rem; align-items: center; margin: 0 0 1rem; font: 700 .65rem/1 "Space Grotesk", sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.home-load-handoff__copy > p span { color: var(--handoff-blue); }
+.home-load-handoff__copy > p i { color: #aab1c3; font-style: normal; }
+.home-load-handoff__title { display: flex; align-items: baseline; gap: clamp(.45rem, 1.4vw, 1.35rem); font-family: "DM Mono", monospace; letter-spacing: -.08em; white-space: nowrap; }
+.home-load-handoff__title b, .home-load-handoff__title em { font-size: clamp(2.1rem, 7.8vw, 9.25rem); line-height: .76; font-style: normal; }
+.home-load-handoff__title b { color: #f3f5fb; }
+.home-load-handoff__title span { color: var(--handoff-blue); font: 500 clamp(1.25rem, 3vw, 3.5rem)/1 "DM Mono", monospace; }
+.home-load-handoff__title em { color: #dcae43; text-shadow: 1px 2px 0 rgba(70, 45, 20, .8); }
+.home-load-handoff__ledger { display: flex; align-items: center; gap: .85rem; width: min(32rem, 80%); margin: 1.7rem 0 1rem; font: 700 .62rem/1 "Space Grotesk", sans-serif; letter-spacing: .15em; text-transform: uppercase; }
+.home-load-handoff__ledger span:last-child { color: #e3b44e; }
+.home-load-handoff__ledger i { position: relative; flex: 1; height: 2px; overflow: hidden; background: rgba(235, 238, 248, .28); }
+.home-load-handoff__ledger i::after { position: absolute; inset: 0; content: ""; background: linear-gradient(90deg, var(--handoff-blue), #e3b44e); transform: translateX(-102%); }
+.home-load-handoff__copy > strong { display: block; color: #ccd0db; font: 500 clamp(.76rem, 1.2vw, .98rem)/1.45 "DM Mono", monospace; }
+.home-load-handoff__skip { position: absolute; z-index: 3; right: clamp(1.2rem, 3vw, 3.2rem); bottom: clamp(1.2rem, 3vw, 2.6rem); border: 1px solid rgba(32, 42, 48, .4); background: rgba(255, 249, 227, .58); color: #162126; padding: .7rem .9rem; font: 700 .63rem/1 "Space Grotesk", sans-serif; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: transform 160ms cubic-bezier(.23,1,.32,1), background 160ms cubic-bezier(.23,1,.32,1); }
+.home-load-handoff__skip:hover, .home-load-handoff__skip:focus-visible { background: #fff8e6; transform: translateY(-2px); outline: 2px solid #3972ff; outline-offset: 3px; }
+.home-load-handoff__skip:active { transform: scale(.97); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-load-handoff__grid { animation: handoff-grid 2.7s cubic-bezier(.23,1,.32,1) both; }
+  .home-load-handoff__orbit--one { animation: handoff-orbit-one 2.4s cubic-bezier(.77,0,.175,1) both; }
+  .home-load-handoff__orbit--two { animation: handoff-orbit-two 2.2s cubic-bezier(.23,1,.32,1) .18s both; }
+  .home-load-handoff__signal { animation: handoff-signal 2.5s cubic-bezier(.23,1,.32,1) both; }
+  .home-load-handoff__paper-line--one { animation: handoff-pencil 2.4s cubic-bezier(.23,1,.32,1) .18s both; }
+  .home-load-handoff__paper-line--two { animation: handoff-pencil 2.2s cubic-bezier(.23,1,.32,1) .38s both; }
+  .home-load-handoff__tape { animation: handoff-tape 2.2s cubic-bezier(.23,1,.32,1) .38s both; }
+  .home-load-handoff__pencil-mark { animation: handoff-mark 1.5s cubic-bezier(.23,1,.32,1) .85s both; }
+  .home-load-handoff__seam i { animation: handoff-seam 2.65s cubic-bezier(.77,0,.175,1) both; }
+  .home-load-handoff__copy > p, .home-load-handoff__title, .home-load-handoff__copy > strong { animation: handoff-copy 1.15s cubic-bezier(.23,1,.32,1) .15s both; }
+  .home-load-handoff__ledger i::after { animation: handoff-ledger 1.9s cubic-bezier(.77,0,.175,1) .5s both; }
+  .home-load-handoff__skip { animation: handoff-copy .7s cubic-bezier(.23,1,.32,1) 1.15s both; }
+}
+
+@keyframes handoff-grid { from { opacity: 0; transform: rotate(-12deg) translate(-2%, 2%); } to { opacity: .48; transform: rotate(-12deg) translate(0); } }
+@keyframes handoff-orbit-one { from { opacity: 0; transform: translate(-50%, -50%) scale(.78); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+@keyframes handoff-orbit-two { from { opacity: 0; transform: translate(-50%, -50%) scale(.86); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+@keyframes handoff-signal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes handoff-pencil { from { opacity: 0; transform: rotate(-7deg) scaleX(.04); } to { opacity: 1; transform: rotate(-7deg) scaleX(1); } }
+@keyframes handoff-tape { from { opacity: 0; transform: rotate(8deg) translateY(-14px); } to { opacity: 1; transform: rotate(8deg) translateY(0); } }
+@keyframes handoff-mark { from { opacity: 0; transform: rotate(-7deg) translateX(12px); } to { opacity: 1; transform: rotate(-7deg) translateX(0); } }
+@keyframes handoff-seam { from { transform: translateY(-110%); } 68% { transform: translateY(0); } to { transform: translateY(360%); } }
+@keyframes handoff-copy { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes handoff-ledger { from { transform: translateX(-102%); } to { transform: translateX(0); } }
+
+@media (max-width: 680px) {
+  .home-load-handoff { grid-template-columns: 1fr; grid-template-rows: 48% 52%; }
+  .home-load-handoff__studio-field { grid-row: 1; }
+  .home-load-handoff__maker-field { grid-row: 2; }
+  .home-load-handoff__seam { top: 48%; right: 0; left: 0; bottom: auto; width: auto; height: 1px; }
+  .home-load-handoff__seam i { width: 24%; height: 1px; }
+  .home-load-handoff__copy { top: 49%; left: 1.3rem; width: calc(100% - 2.6rem); transform: translateY(-50%); }
+  .home-load-handoff__title { gap: .4rem; }
+  .home-load-handoff__title b, .home-load-handoff__title em { font-size: clamp(2rem, 13.7vw, 4.2rem); }
+  .home-load-handoff__title span { font-size: 1.1rem; }
+  .home-load-handoff__ledger { width: min(20rem, 90%); margin: 1rem 0 .7rem; }
+  .home-load-handoff__copy > strong { font-size: .69rem; max-width: 20rem; }
+  .home-load-handoff__pencil-mark { bottom: 16%; }
+  .home-load-handoff__skip { right: 1rem; bottom: 1rem; }
+  @keyframes handoff-seam { from { transform: translateX(-110%); } 68% { transform: translateX(0); } to { transform: translateX(430%); } }
+}

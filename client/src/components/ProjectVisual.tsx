@@ -1,4 +1,4 @@
-// Split-Screen Studio: Abstract project artefacts provide a consistent visual canvas without pretending to be product screenshots.
+// Split-Screen Studio: Generated editorial stills sit beneath legible metadata, while project-specific vector artefacts keep the Maker collage tactile and the Studio archive indexed.
 import { ArrowUpRight, Braces, Layers3 } from "lucide-react";
 import { type PointerEvent } from "react";
 import { Project } from "@/data/portfolio";
@@ -39,6 +39,12 @@ export default function ProjectVisual({ project, index, featured = false }: { pr
     "Framer Notes": { name: "notes", cue: "motion / note", label: "capture in rhythm", marks: ["write", "move", "keep"] },
     "ChartJS Dashboard": { name: "journal", cue: "data / signal", label: "read the signal", marks: ["chart", "scan", "decide"] },
     "Road To Code": { name: "interview", cue: "learn / next", label: "the next step", marks: ["start", "build", "grow"] },
+    "ShopVista": { name: "vista", cue: "shelf / receipt", label: "object passport", marks: ["shelf", "detail", "receipt"] },
+    "The Last Seed — Story Atlas": { name: "seed", cue: "atlas / 10", label: "a held signal", marks: ["hold", "follow", "return"] },
+    "Move Into Order": { name: "move", cue: "route / room", label: "one next thing", marks: ["plan", "move", "settle"] },
+    "Laocoön — Bronze & Time": { name: "bronze", cue: "study / 04", label: "material in motion", marks: ["arc", "light", "afterimage"] },
+    "Theorem of Kemet": { name: "evidence", cue: "record / 05", label: "trace the claim", marks: ["claim", "record", "theory"] },
+    "Valor": { name: "valor", cue: "field / pull", label: "carry with time", marks: ["pull", "carry", "patina"] },
   };
   const visualProfiles = projectProfiles[project.title] ?? fallbackProfiles;
 
@@ -49,6 +55,12 @@ export default function ProjectVisual({ project, index, featured = false }: { pr
     soda: <div className="signature-object soda-object"><b>FIZZ</b><i /><span>cold press</span></div>,
     notes: <div className="signature-object note-object"><i /><b>saved</b><span>↗ revisit later</span></div>,
     ticket: <div className="signature-object ticket-object"><b>ADMIT</b><i /><span>01 · easy entry</span></div>,
+    vista: <div className="signature-object vista-object"><i /><i /><b>◉</b><span>gallery receipt</span></div>,
+    seed: <div className="signature-object seed-object"><i /><i /><b /><span>root signal</span></div>,
+    move: <div className="signature-object move-object"><i /><i /><b>01</b><span>room route</span></div>,
+    bronze: <div className="signature-object bronze-object"><i /><i /><b>↝</b><span>light study</span></div>,
+    evidence: <div className="signature-object evidence-object"><i /><i /><i /><i /><i /><b>?</b><span>field record</span></div>,
+    valor: <div className="signature-object valor-object"><i /><i /><b>↗</b><span>field pull</span></div>,
   } as const;
 
   const updateProjectTilt = (event: PointerEvent<HTMLDivElement>) => {
@@ -67,7 +79,7 @@ export default function ProjectVisual({ project, index, featured = false }: { pr
 
   return (
       <div className={`project-visual accent-${project.accent} visual-${index % 6} signature-${visualProfiles.name} artifact-${project.slug} ${featured ? "is-featured" : ""}`} onPointerMove={updateProjectTilt} onPointerLeave={resetProjectTilt}>
-      {featured && index === 0 && <img className="project-signal-art" src="/assets/om-project-signal-blue_dddfb8d1.jpg" alt="" />}
+      {project.coverImage ? <img className="project-cover-art" src={project.coverImage} alt="" /> : featured && index === 0 && <img className="project-signal-art" src="/assets/om-project-signal-blue_dddfb8d1.jpg" alt="" />}
       <span className="project-cue">{visualProfiles.cue}</span>
       <div className="project-orb orb-one" />
       <div className="project-orb orb-two" />

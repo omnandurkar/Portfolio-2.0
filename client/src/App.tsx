@@ -18,7 +18,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ModeProvider } from "./contexts/ModeContext";
 
 function Router() {
-  return <Switch><Route path="/" component={Home} /><Route path="/resume" component={Resume} /><Route path="/story" component={Story} /><Route path="/field-guide" component={FieldGuide} /><Route path="/all-projects" component={AllProjects} /><Route path="/work/:slug" component={CaseStudy} /><Route component={NotFound} /></Switch>;
+  return <Switch><Route path="/" component={Home} /><Route path="/resume" component={Resume} /><Route path="/story" component={Story} /><Route path="/field-guide" component={FieldGuide} /><Route path="/all-projects" component={AllProjects} /><Route path="/work" component={() => <AllProjects curated />} /><Route path="/work/:slug" component={CaseStudy} /><Route component={NotFound} /></Switch>;
 }
 
 export default function App() {

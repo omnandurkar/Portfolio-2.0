@@ -1,0 +1,121 @@
+/* Split-Screen Studio: this persistent cue is an understated directional instrument in Studio and a hand-assembled marginal note in Maker. */
+.scroll-continuation-cue {
+  position: fixed;
+  right: 1.8rem;
+  bottom: 1.55rem;
+  z-index: 120;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: "eyebrow arrow" "copy arrow";
+  align-items: center;
+  column-gap: 0.7rem;
+  min-width: 10.8rem;
+  padding: 0.62rem 0.7rem 0.62rem 0.86rem;
+  color: #f8f6ee;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.scroll-continuation-cue:focus-visible {
+  outline: 2px solid #427cff;
+  outline-offset: 4px;
+}
+
+.scroll-continuation-cue:active { transform: scale(0.97); }
+
+.scroll-continuation-eyebrow {
+  grid-area: eyebrow;
+  font-family: "Space Mono", monospace;
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+}
+
+.scroll-continuation-copy {
+  grid-area: copy;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.35;
+}
+
+.scroll-continuation-arrow {
+  grid-area: arrow;
+  color: #4b7fff;
+}
+
+.scroll-continuation-cue.is-studio {
+  border: 1px solid rgba(103, 143, 246, 0.48);
+  border-left: 3px solid #4b7fff;
+  background: rgba(4, 8, 20, 0.86);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(12px);
+}
+
+.scroll-continuation-cue.is-studio::before {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.39rem;
+  left: 0.86rem;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, #4b7fff 0 38%, rgba(75, 127, 255, 0.12) 38% 100%);
+}
+
+.scroll-continuation-cue.is-studio:hover {
+  background: rgba(10, 18, 42, 0.95);
+  box-shadow: 0 13px 34px rgba(39, 92, 216, 0.2), inset 0 0 0 1px rgba(120, 157, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.scroll-continuation-cue.is-maker {
+  min-width: 11.65rem;
+  color: #1d2330;
+  border: 1px dashed rgba(28, 35, 49, 0.65);
+  background: #fffdf2;
+  box-shadow: 3px 3px 0 #4b7fff, 0 10px 22px rgba(38, 31, 21, 0.16);
+  transform: rotate(-1.2deg);
+}
+
+.scroll-continuation-cue.is-maker::before {
+  position: absolute;
+  top: -0.38rem;
+  left: 1.1rem;
+  width: 2.8rem;
+  height: 0.62rem;
+  content: "";
+  background: rgba(100, 157, 255, 0.48);
+  transform: rotate(2deg);
+}
+
+.scroll-continuation-cue.is-maker .scroll-continuation-eyebrow { color: #1c58d6; }
+.scroll-continuation-cue.is-maker .scroll-continuation-arrow { color: #e0483c; }
+
+.scroll-continuation-cue.is-maker:hover {
+  box-shadow: 5px 5px 0 #4b7fff, 0 12px 26px rgba(38, 31, 21, 0.2);
+  transform: translate(-1px, -3px) rotate(-0.25deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-continuation-arrow { animation: continuation-nudge 1.5s cubic-bezier(0.77, 0, 0.175, 1) infinite; }
+}
+
+@keyframes continuation-nudge {
+  0%, 100% { transform: translateY(0); }
+  55% { transform: translateY(4px); }
+}
+
+@media (max-width: 680px) {
+  .scroll-continuation-cue {
+    right: auto;
+    bottom: 1.25rem;
+    left: 1rem;
+    min-width: 9.9rem;
+    padding: 0.55rem 0.62rem 0.55rem 0.72rem;
+  }
+
+  .scroll-continuation-copy { font-size: 0.61rem; }
+  .scroll-continuation-cue.is-maker { min-width: 10.8rem; }
+}

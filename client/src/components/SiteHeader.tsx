@@ -8,7 +8,7 @@ import "./SiteHeaderEggs.css";
 
 const navItems = [
   { label: "About", anchor: "about" },
-  { label: "Work", anchor: "work" },
+  { label: "Work", href: "/work" },
   { label: "Experience", anchor: "experience" },
   { label: "Contact", anchor: "contact" },
 ];
@@ -40,7 +40,7 @@ export default function SiteHeader() {
 
         <nav className={menuOpen ? "site-nav is-open" : "site-nav"} aria-label="Primary navigation">
           {navItems.map((item) => (
-            <HoverHint key={item.anchor} label={item.label} detail={{ About: "A concise view of Om’s working approach.", Work: "Selected builds with evidence and case-study routes.", Experience: "Teams, internships, and practical delivery context.", Contact: "Choose a direct reason to start a conversation." }[item.label] ?? item.label} side="bottom"><a href={`${homePrefix}#${item.anchor}`} onClick={closeMenu}>{item.label}</a></HoverHint>
+            <HoverHint key={item.label} label={item.label} detail={{ About: "A concise view of Om’s working approach.", Work: "A focused shelf of six current builds with evidence and project notes.", Experience: "Teams, internships, and practical delivery context.", Contact: "Choose a direct reason to start a conversation." }[item.label] ?? item.label} side="bottom">{item.href ? <Link href={item.href} onClick={closeMenu}>{item.label}</Link> : <a href={`${homePrefix}#${item.anchor}`} onClick={closeMenu}>{item.label}</a>}</HoverHint>
           ))}
           <HoverHint label="Story cartridge" detail="Play Om’s scroll-driven side quest, with scene navigation and parallax worlds." side="bottom"><Link href="/story" onClick={closeMenu}>Story</Link></HoverHint>
           <HoverHint label="Field guide" detail="Inspect the portfolio’s hidden controls, materials, and creative system." side="bottom"><Link href="/field-guide" onClick={closeMenu}>Guide</Link></HoverHint>
