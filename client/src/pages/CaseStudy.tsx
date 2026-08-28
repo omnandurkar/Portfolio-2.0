@@ -1,4 +1,5 @@
 // Split-Screen Studio: Evidence-rich case studies retain Studio precision while Maker presents the same facts as a physical build note; incoming records add optional, clearly bounded source and story layers.
+/** Design reminder — Case studies carry an evidence-led Studio dossier / Maker field-notes identity; archival version links stay quiet and never compete with the project path. */
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, BookOpenCheck, Bug, CheckCircle2, ExternalLink, FileWarning, Github, Layers3, Milestone, ScanSearch, ShieldCheck } from "lucide-react";
 import { useState } from "react";
@@ -66,7 +67,7 @@ export default function CaseStudy() {
           <article className="study-closing"><Layers3 size={25} /><p>{study.closing}</p><Link href="/all-projects">Explore the broader archive <ArrowUpRight size={17} /></Link></article>
         </section>
       </main>
-      <footer className="site-footer"><span>© 2026 Om Nandurkar</span><span>Built with React · Tailwind · GSAP</span><Link href="/">Return to homepage ↑</Link></footer>
+      <footer className="site-footer"><span>© 2026 Om Nandurkar · v2.0.24</span><span>Built with React · Tailwind · GSAP</span><a href="https://omnandurkar.vercel.app/" target="_blank" rel="noreferrer" aria-label="Visit Portfolio version 1.27.32 in a new tab">Portfolio v1.27.32 ↗</a><Link href="/">Return to homepage ↑</Link></footer>
       <LegacyProjectDialog project={legacyPromptOpen ? project : null} onOpenChange={(open) => setLegacyPromptOpen(open)} />
     </div>
   );

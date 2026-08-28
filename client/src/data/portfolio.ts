@@ -102,7 +102,7 @@ const projectCaseStudyExtensions: Record<string, CaseStudyExtension> = {
     ],
     context: { label: "Context note / product discovery", statement: "Bain and Flipkart’s work on India’s online shopping landscape is useful context for a simple design premise: when choice expands, discovery needs orientation. ShopVista explores that premise through an editorial interface rather than a recommendation claim.", sourceName: "Bain & Company / Flipkart, How India Shops Online", sourceUrl: "https://www.bain.com/insights/how-india-shops-online-2024/" },
     scope: { title: "Prototype boundary", detail: "ShopVista is an interactive frontend concept. Its catalogue, account, tracking, support, checkout, and payment states are fictional client-side samples; it does not process payments or store customer data." },
-    story: { label: "Reading beat / commerce", title: "Shelf → object → receipt.", summary: "The visual rhythm follows the practical journey without turning support and post-purchase screens into an afterthought.", beats: ["Discover through a curated shelf", "Read an object through its passport", "Complete a simulated receipt" ] },
+    story: { label: "Reading beat / commerce", title: "Shelf → object → receipt.", summary: "The visual rhythm follows the practical journey without turning support and post-purchase screens into an afterthought.", beats: ["Discover through a curated shelf", "Read an object through its passport", "Complete a simulated receipt"] },
   },
   "The Last Seed — Story Atlas": {
     contributions: [
@@ -112,7 +112,7 @@ const projectCaseStudyExtensions: Record<string, CaseStudyExtension> = {
     ],
     context: { label: "Context note / biodiversity", statement: "FAO identifies biodiversity as a foundation of food and agriculture. That real-world context gives an ethical horizon to The Last Seed, while the project itself remains an original work of speculative fiction—not a biodiversity data product.", sourceName: "Food and Agriculture Organization of the United Nations, Biodiversity", sourceUrl: "https://www.fao.org/biodiversity/en/" },
     scope: { title: "Fiction and data boundary", detail: "This is a static, frontend-only anthology of original speculative-fiction narratives. Its seeds, signals, worlds, and visual states are authored story material, not live environmental data, measurements, or forecasts." },
-    story: { label: "Reading beat / anthology", title: "Ten worlds. One live archive.", summary: "The Atlas lets each story keep a different motion personality while the collection remains navigable as a whole.", beats: ["Enter through a held seed", "Follow one of ten authored signals", "Return through the Archive Reactor" ] },
+    story: { label: "Reading beat / anthology", title: "Ten worlds. One live archive.", summary: "The Atlas lets each story keep a different motion personality while the collection remains navigable as a whole.", beats: ["Enter through a held seed", "Follow one of ten authored signals", "Return through the Archive Reactor"] },
   },
   "Move Into Order": {
     contributions: [
@@ -122,7 +122,7 @@ const projectCaseStudyExtensions: Record<string, CaseStudyExtension> = {
     ],
     context: { label: "Context note / touch targets", statement: "WCAG 2.2’s Target Size (Minimum) success criterion describes a 24 by 24 CSS-pixel minimum with defined exceptions. That standard helped frame touch-target intent in this project; it is not an accessibility certification.", sourceName: "W3C, WCAG 2.2 — Target Size (Minimum)", sourceUrl: "https://www.w3.org/TR/WCAG22/#target-size-minimum" },
     scope: { title: "Prototype boundary", detail: "Move Into Order is a frontend prototype. Its active-session states reset on refresh; authentication, persistence, reminders, sharing, uploads, and QR-supported inventory are intentionally production-roadmap work." },
-    story: { label: "Reading beat / moving route", title: "One room. One phase. One next thing.", summary: "The visual route narrows a noisy life transition into a sequence that can be seen, completed, and reopened.", beats: ["Plan by room", "Hold the move-day handoff", "Arrive with a first-night route" ] },
+    story: { label: "Reading beat / moving route", title: "One room. One phase. One next thing.", summary: "The visual route narrows a noisy life transition into a sequence that can be seen, completed, and reopened.", beats: ["Plan by room", "Hold the move-day handoff", "Arrive with a first-night route"] },
   },
   "Laocoön — Bronze & Time": {
     contributions: [
@@ -132,7 +132,7 @@ const projectCaseStudyExtensions: Record<string, CaseStudyExtension> = {
     ],
     context: { label: "Context note / art-historical reference", statement: "The Vatican Museums’ collection record for the Laocoön Group provides a historical reference point for the project’s interest in sculpture, force, and material memory. This site is a fictional digital-art study, not a museum collaboration or collection record.", sourceName: "Vatican Museums, Laocoön Group", sourceUrl: "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/museo-pio-clementino/cortile-ottagono/laocoonte.html" },
     scope: { title: "Fictional exhibition boundary", detail: "Laocoön — Bronze & Time is a static digital-art and 3D-web study. Its portfolio artwork uses original abstracted sculpture imagery and does not reproduce the Laocoön Group, claim ownership, or imply affiliation with a museum." },
-    story: { label: "Reading beat / material study", title: "Bronze → motion → afterimage.", summary: "The scroll behaves like a camera choreographer, moving around one object instead of pushing the visitor through a conventional content stack.", beats: ["Hold the material study", "Arc around the gesture", "Let bronze resolve into sapphire" ] },
+    story: { label: "Reading beat / material study", title: "Bronze → motion → afterimage.", summary: "The scroll behaves like a camera choreographer, moving around one object instead of pushing the visitor through a conventional content stack.", beats: ["Hold the material study", "Arc around the gesture", "Let bronze resolve into sapphire"] },
   },
   "Theorem of Kemet": {
     contributions: [
@@ -142,7 +142,7 @@ const projectCaseStudyExtensions: Record<string, CaseStudyExtension> = {
     ],
     context: { label: "Context note / privacy language", statement: "NIST’s voluntary Privacy Framework offers a risk-based vocabulary for managing privacy risk. It is useful context for explaining the journal’s careful data and access boundaries; it does not certify this project or make it a compliance product.", sourceName: "National Institute of Standards and Technology, Privacy Framework", sourceUrl: "https://www.nist.gov/privacy-framework" },
     scope: { title: "Evidence boundary", detail: "Visual relationships, personal interpretations, and anomaly labels are never presented as proof. The journal is not predictive or diagnostic; its purpose is to make source-aware reading and editorial method more visible." },
-    story: { label: "Reading beat / field method", title: "Claim → record → question.", summary: "The strongest visual moment is not a revelation: it is the reader seeing exactly where evidence ends and interpretation begins.", beats: ["Name the public claim", "Inspect records and counterarguments", "Frame an interpretation as interpretation" ] },
+    story: { label: "Reading beat / field method", title: "Claim → record → question.", summary: "The strongest visual moment is not a revelation: it is the reader seeing exactly where evidence ends and interpretation begins.", beats: ["Name the public claim", "Inspect records and counterarguments", "Frame an interpretation as interpretation"] },
   },
   "Valor": {
     contributions: [
@@ -152,7 +152,7 @@ const projectCaseStudyExtensions: Record<string, CaseStudyExtension> = {
     ],
     context: { label: "Context note / leather industry", statement: "Leather Working Group develops environmental audit protocols for leather manufacturing. It is included here only as general material-industry context; it makes no claim about Valor’s certification, supplier, sourcing, or production practices.", sourceName: "Leather Working Group", sourceUrl: "https://www.leatherworkinggroup.com/" },
     scope: { title: "Brand record boundary", detail: "This record documents the supplied brand and website brief. It makes no independent certification, sourcing, inventory, durability, or sustainability claim about Valor or the Field Pull wallet." },
-    story: { label: "Reading beat / material object", title: "Pull → carry → patina.", summary: "The launch uses one small everyday mechanism to introduce the larger material story rather than inventing performance claims.", beats: ["Pull the wallet open", "Choose a finish and carry profile", "Read care as part of ownership" ] },
+    story: { label: "Reading beat / material object", title: "Pull → carry → patina.", summary: "The launch uses one small everyday mechanism to introduce the larger material story rather than inventing performance claims.", beats: ["Pull the wallet open", "Choose a finish and carry profile", "Read care as part of ownership"] },
   },
 };
 
@@ -243,17 +243,31 @@ export const featuredProjects = currentProjects.slice(0, 6);
 export const archiveProjects = [...currentProjects, ...legacyProjects];
 
 export const experiences = [
-  { company: "Stoic & Salamander Global Corporation", role: "Software Developer Apprentice", period: "Jul 2024 — Nov 2024", notes: ["Built internal tools for notes, expenses, invoices, and payslips.", "Contributed to responsive frontend projects and mentored junior developers."] },
-  { company: "Road To Code", role: "Tech Assistance Intern", period: "Dec 2023 — Feb 2024", notes: ["Taught computer-science students the fundamentals of web development.", "Contributed documentation and code to the open-source Spaceship project."] },
+  { 
+    company: "Leading Global Tech Company (NDA)", 
+    role: "Contingent Worker", 
+    period: "Mar 2025 — Present", 
+    notes: ["Contributing to large-scale engineering initiatives as a contingent worker.", "Collaborating with cross-functional teams in a high-impact, fast-paced environment."] 
+  },
+  { company: "Stoic & Salamander Global Corporation",
+    role: "Software Developer Apprentice", 
+    period: "Jul 2024 — Nov 2024", 
+    notes: ["Built internal tools for notes, expenses, invoices, and payslips.", "Contributed to responsive frontend projects and mentored junior developers."] 
+  },
+  { company: "Road To Code", 
+    role: "Tech Assistance Intern", 
+    period: "Dec 2023 — Feb 2024", 
+    notes: ["Taught computer-science students the fundamentals of web development.", "Contributed documentation and code to the open-source Spaceship project."] 
+  },
 ];
 
 export const profile = {
   email: "nandurkarom172@gmail.com",
   resumeUrl: "https://drive.google.com/file/d/1Ly0l0SSPd7Lc2tOXOtwi06-jUB5THFUH/view?usp=sharing",
   social: [
-    { label: "LinkedIn", url: "https://www.linkedin.com/" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/om-nandurkar17/" },
     { label: "GitHub", url: "https://github.com/omnandurkar" },
-    { label: "Peerlist", url: "https://peerlist.io/" },
-    { label: "WhatsApp", url: "https://wa.me/" },
+    { label: "Peerlist", url: "https://peerlist.io/omnandurkar" },
+    { label: "WhatsApp", url: "https://wa.me/919766426214" },
   ],
 };
