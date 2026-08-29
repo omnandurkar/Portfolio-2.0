@@ -20,9 +20,9 @@ import "./HomeEasterEggs.css";
 const reveal = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 
 const services = [
-  { number: "01", title: "Web development", icon: Code2, tags: ["Next.js", "React", "JavaScript"], copy: "Responsive products that feel deliberate from the first interaction to the last state." },
-  { number: "02", title: "Product interface", icon: Palette, tags: ["Figma", "Motion", "Responsive"], copy: "Visual systems and interactions that help a product say more with less friction." },
-  { number: "03", title: "Backend systems", icon: Database, tags: ["Node.js", "Express", "APIs"], copy: "The practical infrastructure underneath an intuitive, dependable user experience." },
+  { number: "01", title: "Web development", icon: Code2, tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js", "GSAP"], copy: "Responsive products that feel deliberate from the first interaction to the last state." },
+  { number: "02", title: "Product interface", icon: Palette, tags: ["Figma", "Framer Motion", "UI/UX", "Motion", "Responsive"], copy: "Visual systems and interactions that help a product say more with less friction." },
+  { number: "03", title: "Backend systems", icon: Database, tags: ["Node.js", "Express", "Mongoose", "Prisma", "tRPC", "MySQL"], copy: "The practical infrastructure underneath an intuitive, dependable user experience." },
 ];
 
 const contactIntents = [
@@ -279,7 +279,7 @@ export default function Home() {
               <p>I care about the full experience: what users see, what they feel when they interact, and the dependable systems underneath.</p>
               <div className="metrics" aria-label="Career summary">
                 <div><strong>20<span>+</span></strong><small>shipped projects</small></div>
-                <div><strong>02</strong><small>teams supported</small></div>
+                <div><strong>03</strong><small>teams supported</small></div>
                 <div><strong>∞</strong><small>curious iterations</small></div>
               </div>
             </motion.div>
@@ -328,7 +328,7 @@ export default function Home() {
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
                     <dl className="project-proof" aria-label={`${project.title} project proof`}><div><dt>Role</dt><dd>{project.role ?? `${project.type} build`}</dd></div><div><dt>Focus</dt><dd>{project.proof ?? project.category}</dd></div></dl>
-                    <div className="project-footer"><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-actions">{project.slug && <a className="project-note-link" href={`/work/${project.slug}`}>Build note <ArrowUpRight size={16} /></a>}<a href={project.liveUrl} target="_blank" rel="noreferrer" aria-label={`View ${project.title} live website`}>View live <ArrowUpRight size={17} /></a></div></div>
+                    <div className="project-footer"><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-actions">{project.slug && <a className="project-note-link" href={`/work/${project.slug}`}>Build note <ArrowUpRight size={16} /></a>}<a className="project-live-link" href={project.liveUrl} target="_blank" rel="noreferrer" aria-label={`View ${project.title} live website`}>View live <ArrowUpRight size={17} /></a></div></div>
                   </div>
                 </motion.article>
             ))}
@@ -348,6 +348,11 @@ export default function Home() {
               <p className="period">{experience.period}</p>
               <h3>{experience.company}</h3><h4>{experience.role}</h4>
               <div className="experience-notes">{experience.notes.map((note) => <p key={note}>{note}</p>)}</div>
+              {experience.imageUrl && (
+                <div className="experience-image-wrap">
+                  <img src={experience.imageUrl} alt={experience.company} loading="lazy" />
+                </div>
+              )}
             </motion.article>)}
           </div>
         </section>
@@ -369,7 +374,7 @@ export default function Home() {
         </section>
       </main>
       <ScrollContinuationCue />
-      <footer className="site-footer"><span className="footer-mark"><b>OM</b><i>v2.0.24 · signal / 2026</i></span><span>Built with React · Tailwind · GSAP</span><a href="https://omnandurkar.vercel.app/" target="_blank" rel="noreferrer" aria-label="Visit Portfolio version 1.27.32 in a new tab">Portfolio v1.27.32 ↗</a><div className="footer-discovery"><button type="button" className={signalFound ? "footer-signal is-found" : "footer-signal"} aria-expanded={signalFound} onClick={() => setSignalFound((found) => !found)}><Sparkles size={12} /><span>{isStudio ? "Found a signal?" : "a little secret?"}</span></button>{signalFound && <motion.div className="footer-signal-note" initial={{ opacity: 0, y: 7, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.2 }} role="status"><p>{isStudio ? "The work stays obvious. The hidden layer is optional." : "There’s a whole little map behind the main path."}</p><a href="/field-guide">Open the Field Guide <ArrowUpRight size={12} /></a></motion.div>}</div><a href="#top">Back to top ↑</a>{workspaceNudge && <motion.div className="workspace-nudge" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}><span>Still here? There’s a little map behind the pixels.</span><a href="/field-guide">Open it <ArrowUpRight size={12} /></a><button type="button" aria-label="Dismiss workspace note" onClick={() => setWorkspaceNudge(false)}>×</button></motion.div>}</footer>
+      <footer className="site-footer"><span className="footer-mark"><b>OM</b><i>v2.0.24 · signal / 2026</i></span><span>Built with React · Tailwind · GSAP</span><a href="https://omnandurkar.vercel.app/" target="_blank" rel="noreferrer" aria-label="Visit Portfolio version 1.27.32 in a new tab">[Old] Portfolio v1.27.32 ↗</a><div className="footer-discovery"><button type="button" className={signalFound ? "footer-signal is-found" : "footer-signal"} aria-expanded={signalFound} onClick={() => setSignalFound((found) => !found)}><Sparkles size={12} /><span>{isStudio ? "Found a signal?" : "a little secret?"}</span></button>{signalFound && <motion.div className="footer-signal-note" initial={{ opacity: 0, y: 7, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.2 }} role="status"><p>{isStudio ? "The work stays obvious. The hidden layer is optional." : "There’s a whole little map behind the main path."}</p><a href="/field-guide">Open the Field Guide <ArrowUpRight size={12} /></a></motion.div>}</div><a href="#top">Back to top ↑</a>{workspaceNudge && <motion.div className="workspace-nudge" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}><span>Still here? There’s a little map behind the pixels.</span><a href="/field-guide">Open it <ArrowUpRight size={12} /></a><button type="button" aria-label="Dismiss workspace note" onClick={() => setWorkspaceNudge(false)}>×</button></motion.div>}</footer>
     </div>
   );
 }

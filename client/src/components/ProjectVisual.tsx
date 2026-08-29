@@ -80,25 +80,29 @@ export default function ProjectVisual({ project, index, featured = false }: { pr
   return (
       <div className={`project-visual accent-${project.accent} visual-${index % 6} signature-${visualProfiles.name} artifact-${project.slug} ${featured ? "is-featured" : ""}`} onPointerMove={updateProjectTilt} onPointerLeave={resetProjectTilt}>
       {project.coverImage ? <img className="project-cover-art" src={project.coverImage} alt="" /> : featured && index === 0 && <img className="project-signal-art" src="/assets/om-project-signal-blue_dddfb8d1.jpg" alt="" />}
-      <span className="project-cue">{visualProfiles.cue}</span>
-      <div className="project-orb orb-one" />
-      <div className="project-orb orb-two" />
-      <div className="artefact artefact-one" /><div className="artefact artefact-two" /><div className="artefact artefact-three" />
-      <div className="project-window">
-        <div className="window-top"><i /><i /><i /><span>{project.category}</span></div>
-        <div className="window-body">
-          <div className="code-rail"><Braces size={17} /><span>{String(index + 1).padStart(2, "0")}</span></div>
-          <div className="code-lines"><b /><b /><b /><b /></div>
-          <div className="window-tiles"><i /><i /><i /></div>
-        </div>
-      </div>
-      <div className="project-specific" aria-hidden="true">
-        <b>{visualProfiles.label}</b>
-        <div className="specific-track">{visualProfiles.marks.map((mark, markIndex) => <span key={mark} className={`mark-${markIndex}`}>{mark}</span>)}</div>
-      </div>
-      <div aria-hidden="true">{signatureObjects[visualProfiles.name as keyof typeof signatureObjects]}</div>
-      <div className="artifact-lines"><i /><i /><i /><i /></div>
-      <div className="project-marks"><Layers3 size={17} /><ArrowUpRight size={17} /></div>
+      {!project.coverImage && (
+        <>
+          <span className="project-cue">{visualProfiles.cue}</span>
+          <div className="project-orb orb-one" />
+          <div className="project-orb orb-two" />
+          <div className="artefact artefact-one" /><div className="artefact artefact-two" /><div className="artefact artefact-three" />
+          <div className="project-window">
+            <div className="window-top"><i /><i /><i /><span>{project.category}</span></div>
+            <div className="window-body">
+              <div className="code-rail"><Braces size={17} /><span>{String(index + 1).padStart(2, "0")}</span></div>
+              <div className="code-lines"><b /><b /><b /><b /></div>
+              <div className="window-tiles"><i /><i /><i /></div>
+            </div>
+          </div>
+          <div className="project-specific" aria-hidden="true">
+            <b>{visualProfiles.label}</b>
+            <div className="specific-track">{visualProfiles.marks.map((mark, markIndex) => <span key={mark} className={`mark-${markIndex}`}>{mark}</span>)}</div>
+          </div>
+          <div aria-hidden="true">{signatureObjects[visualProfiles.name as keyof typeof signatureObjects]}</div>
+          <div className="artifact-lines"><i /><i /><i /><i /></div>
+          <div className="project-marks"><Layers3 size={17} /><ArrowUpRight size={17} /></div>
+        </>
+      )}
     </div>
   );
 }
