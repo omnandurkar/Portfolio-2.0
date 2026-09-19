@@ -19,7 +19,7 @@ export function ModeProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<PortfolioMode>(() => {
     const requestedMode = new URLSearchParams(window.location.search).get("mode");
     const saved = localStorage.getItem("om-portfolio-mode");
-    return requestedMode === "scrapbook" || (!requestedMode && saved === "scrapbook") ? "scrapbook" : "studio";
+    return requestedMode === "studio" || (!requestedMode && saved === "studio") ? "studio" : "scrapbook";
   });
   const modeRef = useRef(mode);
   const timeoutRef = useRef<number | undefined>(undefined);

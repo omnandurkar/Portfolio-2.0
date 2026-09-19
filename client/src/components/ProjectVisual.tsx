@@ -45,6 +45,7 @@ export default function ProjectVisual({ project, index, featured = false }: { pr
     "Laocoön — Bronze & Time": { name: "bronze", cue: "study / 04", label: "material in motion", marks: ["arc", "light", "afterimage"] },
     "Theorem of Kemet": { name: "evidence", cue: "record / 05", label: "trace the claim", marks: ["claim", "record", "theory"] },
     "Valor": { name: "valor", cue: "field / pull", label: "carry with time", marks: ["pull", "carry", "patina"] },
+    "Creator Studio — Om Nandurkar": { name: "seed", cue: "room / garden", label: "mind garden & archive", marks: ["music", "shayari", "room"] },
   };
   const visualProfiles = projectProfiles[project.title] ?? fallbackProfiles;
 

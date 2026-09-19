@@ -68,6 +68,7 @@ const projectVoice: Record<string, { opportunity: string; build: string; contrib
   "Laocoön — Bronze & Time": { opportunity: "A single object can carry a whole atmosphere.", build: "A scroll-led material study with the camera as choreographer.", contribution: "Digital sculpture, held in an editorial frame." },
   "Theorem of Kemet": { opportunity: "Curiosity needs a visible method.", build: "A field journal that separates traceable records from interpretation.", contribution: "An immersive archive that earns reader trust." },
   "Valor": { opportunity: "A small everyday object can still have a material story.", build: "A product launch paced around pull, carry, care, and time.", contribution: "A quiet digital stage for everyday carry." },
+  "Creator Studio — Om Nandurkar": { opportunity: "A portfolio can be an expressive digital world rather than a flat grid.", build: "A room-based archive where sound, writing, visuals, and notes coexist.", contribution: "Personal archive and creative room, made navigable." },
 };
 
 const projectDetail: Record<string, { brief: string; approach: string }> = {
@@ -89,6 +90,7 @@ const projectDetail: Record<string, { brief: string; approach: string }> = {
   "Laocoön — Bronze & Time": { brief: "Laocoön — Bronze & Time is a scroll-driven digital sculpture study. A bronze horse is treated as a protagonist rather than a product render, moving through light, shadow, smoke, and a gradual bronze-to-sapphire shift.", approach: "A self-contained Three.js and WebGL build stages the experience with a fixed visual field, a scroll-driven camera arc, responsive lighting, a liquid-metal shader, ember-like particles, and a sparse five-line editorial grid. The interface frames the sculpture instead of competing with it." },
   "Theorem of Kemet": { brief: "Theorem of Kemet is an evidence-aware journal for ancient Egypt’s unresolved stories. A reader-facing archive and private curator desk make the difference between a claim, documented record, counterargument, anomaly, and interpretation deliberately legible.", approach: "The full-stack product combines React 19, TypeScript, Vite, Wouter, Tailwind, Framer Motion, GSAP, Express, tRPC, Drizzle, MySQL, and Vitest. Its Field Notes of the Necropolis system uses archival texture and slow image-led movement while keeping sources, labels, and accessible controls close to the reader’s next question." },
   "Valor": { brief: "Valor is a Mumbai–Nashik leather-goods startup concept centered on the Field Pull wallet: a slim, hand-finished carry piece intended to become more personal through daily use, patina, and time.", approach: "The website pairs a cinematic, scroll-led product story with tactile neo-heritage material cues: charred leather, parchment dossier panels, restrained brass, editorial serif typography, and a pull-tab interaction that gives the hero product a clear physical behaviour." },
+  "Creator Studio — Om Nandurkar": { brief: "Creator Studio is a personalized digital archive and interactive portfolio bringing together music, albums, Shayari, writings, books, movie reflections, notes, hobbies, and creative experiments in room-based pastel scrapbook experiences.", approach: "The React, TypeScript, Vite, Tailwind CSS, Framer Motion, and Wouter build uses a JSON-managed content system, allowing songs, stories, reviews, and archive entries to be updated directly through structured content files with custom SVG illustrations and subtle tactile animations." },
 };
 
 type CaseStudyExtension = Partial<Project["caseStudy"]>;
@@ -154,6 +156,16 @@ const projectCaseStudyExtensions: Record<string, CaseStudyExtension> = {
     scope: { title: "Brand record boundary", detail: "This record documents the supplied brand and website brief. It makes no independent certification, sourcing, inventory, durability, or sustainability claim about Valor or the Field Pull wallet." },
     story: { label: "Reading beat / material object", title: "Pull → carry → patina.", summary: "The launch uses one small everyday mechanism to introduce the larger material story rather than inventing performance claims.", beats: ["Pull the wallet open", "Choose a finish and carry profile", "Read care as part of ownership"] },
   },
+  "Creator Studio — Om Nandurkar": {
+    contributions: [
+      "Designed and developed room-based visual identities featuring pastel scrapbook layouts and custom SVG illustrations.",
+      "Built a JSON-managed content architecture enabling modular updates for music, Shayari, reviews, and notes.",
+      "Created tactile interactive elements like the Mind Garden's moving flower and wind experience with Framer Motion and Wouter routing.",
+    ],
+    context: { label: "Context note / digital archive", statement: "Personal archives and creative portfolios thrive when structure supports expression. Creator Studio treats creative output across mediums as one evolving, navigable story world.", sourceName: "Creator Studio Archive", sourceUrl: "https://archive.omnandurkar.space" },
+    scope: { title: "Archive boundary", detail: "Creator Studio is a personalized digital archive and interactive web portfolio. All songs, writings, reviews, and visual assets are managed via structured content files." },
+    story: { label: "Reading beat / creative rooms", title: "Sound → writing → interactive rooms.", summary: "Each room pairs a distinct visual identity with interactive elements to create an immersive artistic journey.", beats: ["Explore the music and album archives", "Read Shayari and written reflections", "Interact with the Mind Garden and room experiences"] },
+  },
 };
 
 const makeProject = (seed: Seed): Project => {
@@ -186,6 +198,7 @@ const makeProject = (seed: Seed): Project => {
 const projects: Project[] = [
   // --- Priority Featured Projects ---
   makeProject({ title: "ShopVista", type: "Frontend", category: "Editorial commerce concept", description: "An editorial e-commerce concept that makes product discovery feel like browsing a design catalogue.", stack: ["React 19", "TypeScript", "GSAP", "Framer Motion"], liveUrl: "https://shop-vista-sage.vercel.app/", accent: "blue", focus: "curated discovery and a clear simulated commerce journey", role: "Product + visual design · frontend build", coverImage: "/assets/shopvista-editorial-thumbnail_11acdcc0.png", evidence: { label: "Verified GitHub repository", repositoryName: "ShopVista", repositoryUrl: "https://github.com/omnandurkar/ShopVista" } }),
+  makeProject({ title: "Creator Studio — Om Nandurkar", type: "Frontend", category: "Personal digital archive & portfolio", description: "A personalized digital archive and interactive portfolio bringing together music, Shayari, writings, and creative experiments in room-based pastel scrapbook experiences.", stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion"], liveUrl: "https://archive.omnandurkar.space", accent: "yellow", focus: "JSON-managed content rooms, pastel scrapbook layouts, and interactive tactile experiences", role: "Personal archive · experience design · frontend build", coverImage: "/assets/creator-studio-editorial-thumbnail.png", evidence: { label: "Verified GitHub repository", repositoryName: "Creator-Studio", repositoryUrl: "https://github.com/omnandurkar/Creator-Studio" } }),
   makeProject({ title: "Spizz", type: "Frontend", category: "3D product landing page", description: "A motion-led product story that uses dimensional visuals to make a soda brand feel interactive.", stack: ["Next.js", "React Three Fiber", "Three.js", "GSAP"], liveUrl: "https://spizz.vercel.app/", accent: "yellow", focus: "a dimensional product story", coverImage: "/oldAssets/spizz1.png", evidence: { label: "Verified GitHub repository", repositoryName: "spizz", repositoryUrl: "https://github.com/omnandurkar/spizz" } }),
   makeProject({ title: "The Last Seed — Story Atlas", type: "Frontend", category: "Interactive storytelling", description: "A ten-world speculative-fiction anthology built as a cinematic, scroll-driven story archive.", stack: ["React 19", "Three.js", "GSAP", "Lenis"], liveUrl: "https://the-last-seed-tau.vercel.app/", accent: "red", focus: "original narratives revealed through interaction and visual systems", role: "Creative frontend · experience design", coverImage: "/assets/the-last-seed-editorial-thumbnail_f60e80d1.png", evidence: { label: "Verified GitHub repository", repositoryName: "the-last-seed", repositoryUrl: "https://github.com/omnandurkar/the-last-seed" } }),
   makeProject({ title: "Move Into Order", type: "Frontend", category: "Moving companion prototype", description: "A room-first moving companion that turns fragmented logistics into a calm, visible journey.", stack: ["React 19", "TypeScript", "Three.js", "GSAP"], liveUrl: "https://move-into-order.vercel.app/", accent: "yellow", focus: "room-based planning from packing to the first settled week", role: "Product strategy · UX/UI · frontend build", coverImage: "/assets/move-into-order-editorial-thumbnail_7c5c153e.png", evidence: { label: "Verified GitHub repository", repositoryName: "move-into-order", repositoryUrl: "https://github.com/omnandurkar/move-into-order" } }),
@@ -227,12 +240,13 @@ const projects: Project[] = [
 // Current portfolio priority: lead with the six newest evidence-led case studies,
 // preserve all other active work in its original sequence, and keep college-era work last.
 const currentProjectPriority = [
-  "ShopVista",
+  "Creator Studio — Om Nandurkar",
   "Spizz",
   "The Last Seed — Story Atlas",
   "Move Into Order",
   "Laocoön — Bronze & Time",
   "Theorem of Kemet",
+  "ShopVista",
   "Valor",
 ];
 

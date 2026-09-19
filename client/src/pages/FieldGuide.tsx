@@ -65,7 +65,7 @@ const discoveries = [
 const choices = [
   { title: "One architecture, two materials", value: "Studio ↔ Maker", copy: "The information stays constant. What changes is the material language: cinematic stage versus assembled desk.", accent: "mode" },
   { title: "Signal Blue carries intent", value: "#3972FF", copy: "It marks routes, motion, focus, and the OM signature; supporting colours only belong to Maker stationery.", accent: "signal" },
-  { title: "Projects read as evidence", value: "23 build notes", copy: "Each project gets a factual role, stack, proof, and distinct artefact rather than a repeated generic card.", accent: "proof" },
+  { title: "Projects read as evidence", value: "24 build notes", copy: "Each project gets a factual role, stack, proof, and distinct artefact rather than a repeated generic card.", accent: "proof" },
   { title: "Motion has a job", value: "prefers-reduced-motion", copy: "Movement adds character, direction, or tactile response—and always yields to people who prefer a steadier page.", accent: "motion" },
 ];
 

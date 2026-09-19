@@ -13,12 +13,38 @@ import Home from "@/pages/Home";
 import FieldGuide from "@/pages/FieldGuide";
 import Story from "@/pages/Story";
 import Resume from "@/pages/Resume";
-import { Route, Switch } from "wouter";
+import { useEffect } from "react";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ModeProvider } from "./contexts/ModeContext";
 
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    if (window.location.hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+  }, [location]);
+
+  return null;
+}
+
 function Router() {
-  return <Switch><Route path="/" component={Home} /><Route path="/resume" component={Resume} /><Route path="/story" component={Story} /><Route path="/field-guide" component={FieldGuide} /><Route path="/all-projects" component={AllProjects} /><Route path="/work" component={() => <AllProjects curated />} /><Route path="/work/:slug" component={CaseStudy} /><Route component={NotFound} /></Switch>;
+  return (
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/resume" component={Resume} />
+        <Route path="/story" component={Story} />
+        <Route path="/field-guide" component={FieldGuide} />
+        <Route path="/all-projects" component={AllProjects} />
+        <Route path="/work" component={() => <AllProjects curated />} />
+        <Route path="/work/:slug" component={CaseStudy} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
+  );
 }
 
 export default function App() {

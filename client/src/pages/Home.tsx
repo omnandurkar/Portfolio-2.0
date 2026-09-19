@@ -256,7 +256,7 @@ export default function Home() {
                 <div><dt><BriefcaseBusiness size={15} /> Best fit</dt><dd>Frontend / full-stack product work</dd></div>
                 <div><dt><MapPin size={15} /> Based in</dt><dd>Mumbai, India</dd></div>
                 <div><dt><Code2 size={15} /> Working with</dt><dd>React, Node, Express, MongoDB</dd></div>
-                <div><dt><Sparkles size={15} /> Proof at a glance</dt><dd>23 projects · 22 verified repositories</dd></div>
+                <div><dt><Sparkles size={15} /> Proof at a glance</dt><dd>24 projects · 23 verified repositories</dd></div>
               </dl>
               <section className="identity-dossier-conversation" aria-label="Interview conversation starters"><span>{isStudio ? "Good interview prompts" : "you could ask me about"}</span><div><b>Building responsive product flows</b><b>Motion with accessibility fallbacks</b><b>Turning a rough idea into a shipped interface</b></div></section>
               <button type="button" className="identity-dossier-flap" aria-expanded={dossierBack} onClick={() => setDossierBack((open) => !open)}>{dossierBack ? "Close the back flap" : "Turn over: three hiring prompts"}<span>↘</span></button>

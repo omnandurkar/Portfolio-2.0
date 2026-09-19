@@ -2,7 +2,7 @@
 /* Split-Screen Studio: first-visit onboarding lets the full page recede so the real Studio/Maker material switch reads as the central brand handoff. */
 .tethered-mode-control { position:fixed; z-index:150; top:10px; right:18px; display:block; }
 .tethered-mode-control .mode-toggle { margin:0; }
-.mode-onboarding-scrim { position:fixed; z-index:-1; inset:0; width:100vw; height:100vh; pointer-events:auto; backdrop-filter:blur(7px) saturate(.72); -webkit-backdrop-filter:blur(7px) saturate(.72); }
+.mode-onboarding-scrim { position:fixed; z-index:-1; inset:0; width:100vw; height:100vh; pointer-events:none; }
 .mode-onboarding-scrim-studio { background:rgba(1,4,10,.7); }
 .mode-onboarding-scrim-scrapbook { background:rgba(36,39,48,.56); }
 .mode-onboarding-active .mode-toggle { position:relative; z-index:2; box-shadow:0 0 0 6px rgba(83,128,255,.18), 0 18px 42px rgba(0,0,0,.52); }

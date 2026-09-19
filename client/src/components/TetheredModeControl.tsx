@@ -83,16 +83,6 @@ export default function TetheredModeControl() {
   const showGuide = isHome && guideOpen;
 
   return <div className={showGuide ? "tethered-mode-control mode-onboarding-active" : "tethered-mode-control"}>
-    <AnimatePresence>
-      {showGuide && <motion.div
-        className={`mode-onboarding-scrim mode-onboarding-scrim-${mode}`}
-        aria-hidden="true"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: reducedMotion ? 0.01 : 0.2, ease: [0.23, 1, 0.32, 1] }}
-      />}
-    </AnimatePresence>
     <button className={dragging ? "mode-toggle is-material-dragging" : "mode-toggle"} onClick={clickMode} onPointerDown={beginDrag} onPointerUp={finishDrag} onPointerCancel={() => setDragging(false)} type="button" aria-label={`Switch to ${isStudio ? "Maker" : "Studio"} mode`} aria-description="Click to switch materials or drag horizontally to hand off the material." aria-pressed={!isStudio}>
       <motion.span
         className="mode-toggle-icon"
@@ -110,18 +100,17 @@ export default function TetheredModeControl() {
     <AnimatePresence>
       {showGuide && <motion.aside
         className={`mode-intro-guide mode-intro-guide-${mode}`}
-        aria-label="A quick guide to the portfolio's two modes"
+        aria-label="Theme notification tooltip"
         initial={{ opacity: 0, y: reducedMotion ? 0 : -8, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: reducedMotion ? 0 : -6, scale: 0.98 }}
         transition={{ duration: reducedMotion ? 0.01 : 0.22, ease: [0.23, 1, 0.32, 1] }}
       >
-        <button className="mode-intro-guide-close" type="button" onClick={dismissGuide} aria-label="Dismiss the two-mode guide"><X size={15} /></button>
-        <p className="mode-intro-guide-label">QUICK ORIENTATION <i /></p>
-        <strong>Two ways to read this portfolio.</strong>
-        <p className="mode-intro-guide-copy"><b>Studio</b> is focused and precise. <b>Maker</b> is tactile, playful, and assembled by hand.</p>
-        <p className="mode-intro-guide-shortcut"><Keyboard size={15} /><span>{shortcutUsed ? <>Nice — you are now in <b>{isStudio ? "Studio" : "Maker"}</b> mode.</> : <>On a laptop, press <kbd>M</kbd> to switch instantly.</>}</span></p>
-        <p className="mode-intro-guide-touch">On touch, tap or drag the control above to switch.</p>
+        <button className="mode-intro-guide-close" type="button" onClick={dismissGuide} aria-label="Dismiss theme notification"><X size={15} /></button>
+        <p className="mode-intro-guide-label">THEME NOTIFICATION <i /></p>
+        <strong>Creator (Maker) mode active.</strong>
+        <p className="mode-intro-guide-copy">Currently viewing in <b>Creator / Maker</b> style. Tap this button or press <b>M</b> anytime to switch to <b>Studio</b> mode.</p>
+        <p className="mode-intro-guide-shortcut"><Keyboard size={15} /><span>{shortcutUsed ? <>Switched to <b>{isStudio ? "Studio" : "Maker"}</b> mode.</> : <>Press <kbd>M</kbd> to toggle themes anytime.</>}</span></p>
         <button className="mode-intro-guide-dismiss" type="button" onClick={dismissGuide}>Got it <span>→</span></button>
       </motion.aside>}
     </AnimatePresence>
