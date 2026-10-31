@@ -215,4 +215,73 @@ button { cursor: pointer; }
   .experience-image-wrap { grid-column: 1 / -1; justify-self: start; max-width: 100%; margin-top: 10px; aspect-ratio: 16/9; }
 }
 .mode-scrapbook .experience-image-wrap { border: 1px solid rgba(32,36,45,0.2); box-shadow: 3px 4px 0 rgba(32,36,45,0.08); transform: rotate(1deg); }
+.mode-scrapbook .experience-image-wrap { border: 1px solid rgba(32,36,45,0.2); box-shadow: 3px 4px 0 rgba(32,36,45,0.08); transform: rotate(1deg); }
 .mode-scrapbook .experience-entry:nth-child(even) .experience-image-wrap { transform: rotate(-1.5deg); }
+
+/* ─── Section bleed transitions ─────────────────────────────────────────────
+   A glowing blue gradient line replaces the hard 1px border-top between each
+   section. A soft atmospheric glow trails beneath it. Both are pointer-events
+   none so they never interfere with content interaction.
+──────────────────────────────────────────────────────────────────────────── */
+
+/* Shared divider mixin — applied on each section's ::before */
+.about-section,
+.services-section,
+.work-section,
+.experience-section,
+.contact-section { position: relative; }
+
+/* Blue glowing gradient divider line at the top of each section */
+.about-section::before,
+.services-section::before,
+.work-section::before,
+.experience-section::before,
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 5%; right: 5%;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, rgba(57,114,255,0.55) 30%, rgba(100,149,255,0.85) 50%, rgba(57,114,255,0.55) 70%, transparent 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Atmospheric glow below the divider line */
+.about-section::after,
+.services-section::after,
+.work-section::after,
+.experience-section::after,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 180px;
+  background: linear-gradient(to bottom, rgba(57,114,255,0.07) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Work section also needs a bottom bleed into the next (different bg color) */
+.work-section { background: #0e0f12; }
+.work-section::after {
+  top: auto;
+  bottom: 0;
+  height: 180px;
+  background: linear-gradient(to top, rgba(57,114,255,0.05) 0%, transparent 100%);
+}
+
+/* Maker / scrapbook mode — warm ink-blue dividers */
+.mode-scrapbook .about-section::before,
+.mode-scrapbook .services-section::before,
+.mode-scrapbook .work-section::before,
+.mode-scrapbook .experience-section::before,
+.mode-scrapbook .contact-section::before {
+  background: linear-gradient(to right, transparent 0%, rgba(47,87,181,0.35) 30%, rgba(57,114,255,0.55) 50%, rgba(47,87,181,0.35) 70%, transparent 100%);
+}
+.mode-scrapbook .about-section::after,
+.mode-scrapbook .services-section::after,
+.mode-scrapbook .work-section::after,
+.mode-scrapbook .experience-section::after,
+.mode-scrapbook .contact-section::after {
+  background: linear-gradient(to bottom, rgba(57,114,255,0.04) 0%, transparent 100%);
+}

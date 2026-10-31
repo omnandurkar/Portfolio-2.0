@@ -184,7 +184,7 @@ export default function Home() {
               <em>keep what works · redraw the rest</em>
             </aside>
             <figure className="hero-portrait" onPointerMove={updatePortraitTilt} onPointerLeave={resetPortraitTilt}>
-              <img src="/assets/om-editorial-portrait_32f7492d.png" alt="Portrait of Om Nandurkar" />
+              <img src="/assets/om-editorial-portrait-new.jpg" alt="Portrait of Om Nandurkar" style={{ objectPosition: "top", filter: "sepia(0.18) saturate(1.3) brightness(1.04) hue-rotate(-8deg)" }} />
               <figcaption><span>{isStudio ? "OM / 2026" : "the person behind the pixels"}</span><i>{isStudio ? "builder, observer, iterating" : "made with care + a little chaos"}</i></figcaption>
             </figure>
           </div>
@@ -249,7 +249,7 @@ export default function Home() {
               <div className="identity-dossier-rail" aria-hidden="true"><span>OM</span><i /><span>2026</span></div>
               <header className="identity-dossier-head">
                 <div className="identity-dossier-label"><span className="signal-dot" /> {isStudio ? "Recruiter / quick read" : "a quick note for your hiring team"}</div>
-                <div className="identity-dossier-intro"><img src="/assets/om-editorial-portrait_32f7492d.png" alt="Om Nandurkar" /><div><DialogTitle>Om Nandurkar</DialogTitle><DialogDescription id="identity-dossier-description">Product-minded web developer building useful, polished digital experiences.</DialogDescription></div></div>
+                <div className="identity-dossier-intro"><img src="/assets/om-editorial-portrait-new.jpg" alt="Om Nandurkar" style={{ objectPosition: "top", filter: "sepia(0.18) saturate(1.3) brightness(1.04) hue-rotate(-8deg)" }} /><div><DialogTitle>Om Nandurkar</DialogTitle><DialogDescription id="identity-dossier-description">Product-minded web developer building useful, polished digital experiences.</DialogDescription></div></div>
               </header>
               <div className="identity-dossier-summary"><strong>One-line fit</strong><p>MERN stack developer in Mumbai, currently working professionally and open to a thoughtful next product or engineering opportunity.</p></div>
               <dl className="identity-dossier-facts">
